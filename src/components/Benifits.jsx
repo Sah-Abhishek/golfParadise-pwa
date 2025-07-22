@@ -3,7 +3,7 @@ import { Flag, Trophy, DollarSign, Check } from 'lucide-react';
 
 export default function Benefits() {
   return (
-    <div className="m-10 bg-gray-100 p-8">
+    <div className=" bg-gray-100 p-20">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <h1 className="text-4xl font-bold text-center text-gray-800 mb-12">
