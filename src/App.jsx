@@ -7,6 +7,8 @@ import MembershipPlans from './components/MembershipSection'
 import FindCourse from './components/FindCourse'
 import CouponsDeals from './components/CouponsSection'
 import Gallery from './components/Gallery'
+import DownloadAppComponent from './components/DownloadAppSection'
+import FootterSection from './components/FootterSection'
 
 function App() {
 
@@ -21,6 +23,8 @@ function App() {
         <FindCourse />
         <CouponsDeals />
         <Gallery />
+        <DownloadAppComponent />
+        <FootterSection />
       </div>
     </>
   )
