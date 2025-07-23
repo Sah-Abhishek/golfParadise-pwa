@@ -18,7 +18,7 @@ const Hero = () => {
             <p className="text-lg md:text-xl text-white/90">
               Join 200+ top-tier courses and a community of passionate golfers
             </p>
-            <div className="flex justify-end gap-4">
+            <div className="flex flex-col sm:flex-row justify-end gap-4">
               <button className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-6 py-3 rounded-full">
                 View Plans
               </button>
