@@ -1,157 +1,72 @@
-import React, { useState } from "react";
-import RatingStars from "./RatingStar"; // Make sure this component exists
+import React from "react";
+import mapImage from "../assets/findCourse.png"
+import { Search } from "lucide-react";
 
-const filtersData = [
-  { label: "Distance", key: "distance" },
-  { label: "Driving Range", key: "drivingRange" },
-  { label: "Restaurant", key: "restaurant" },
-  { label: "Pro Shop", key: "proShop" },
-];
-
-const golfCourses = [
-  {
-    name: "Pine Valley Golf Club",
-    location: "Pine Valley, NJ 08021",
-    distance: "3.2 miles away",
-    rating: 5.0,
-    reviews: 128,
-    tags: ["Pro Shop", "Restaurant", "Driving Range"],
-    img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-    savings: 30,
-  },
-  {
-    name: "Sunset Hills Golf Club",
-    location: "Sunset Hills, CA 90210",
-    distance: "5.7 miles away",
-    rating: 4.2,
-    reviews: 86,
-    tags: ["Pro Shop", "Restaurant"],
-    img: "https://images.unsplash.com/photo-1464983953574-0892a716854b",
-    savings: 25,
-  },
-  {
-    name: "Eagle Ridge Golf Club",
-    location: "Eagle Ridge, FL 33432",
-    distance: "7.1 miles away",
-    rating: 4.5,
-    reviews: 103,
-    tags: ["Pro Shop", "Driving Range"],
-    img: "https://images.unsplash.com/photo-1752835178514-f31f93a3b540?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    savings: 40,
-  },
-];
-
-export default function GolfCourseFinder() {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [filters, setFilters] = useState({
-    distance: false,
-    drivingRange: true,
-    restaurant: true,
-    proShop: true,
-  });
-
-  const handleToggle = (key) => {
-    setFilters({ ...filters, [key]: !filters[key] });
-  };
-
+export default function CourseFinder() {
   return (
-    <div className="min-h-screen bg-[#e6f2eb] py-8 px-4 overflow-x-hidden">
-      <h1 className="text-4xl font-bold mb-8 text-green-900 text-center">
-        Find a Course Near You
-      </h1>
+    <section className="bg-gray-100 py-16 px-4 md:px-8">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
+        {/* Left Section */}
+        <div className="w-full lg:w-1/2">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            Find Courses Near You
+          </h2>
+          <p className="text-gray-600 mb-8">
+            Discover top-rated golf courses in your area that accept Paradise Golf Card.
+            Filter by distance, amenities, and more.
+          </p>
 
-      {/* Search and Filters */}
-      <div className="w-full max-w-2xl mx-auto mb-6 flex flex-col gap-3">
-        <div className="flex flex-col md:flex-row gap-3 items-stretch md:items-center">
-          <input
-            type="text"
-            placeholder="Enter zip code or city"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="flex-1 px-4 py-3 rounded-full border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-200 bg-white text-lg placeholder-gray-400"
-          />
-          <button className="bg-green-900 text-white text-lg rounded-full px-8 py-3 font-semibold hover:bg-green-800 transition">
-            Search
-          </button>
-        </div>
+          <div className="bg-white p-6 rounded-2xl shadow-md">
+            {/* Input Fields */}
+            <div className="flex flex-col sm:flex-row gap-4 mb-4">
+              <input
+                type="text"
+                placeholder="City or zip code"
+                className="w-full sm:w-1/2 px-4 py-2 border border-gray-300 rounded-md focus:outline-none"
+              />
+              <select className="w-full sm:w-1/2 px-4 py-2 border border-gray-300 rounded-md focus:outline-none">
+                <option>25 miles</option>
+                <option>10 miles</option>
+                <option>50 miles</option>
+              </select>
+            </div>
 
-        <div className="flex flex-wrap gap-2 mt-2">
-          {filtersData.map((f) => (
-            <button
-              key={f.key}
-              onClick={() => handleToggle(f.key)}
-              className={`px-4 py-2 rounded-full border text-sm font-medium transition ${filters[f.key]
-                ? "bg-green-800 text-white border-green-900"
-                : "bg-white text-green-900 border-green-300 hover:border-green-500"
-                }`}
-            >
-              {f.label}
-              {filters[f.key] ? " ×" : ""}
+            {/* Filter Tags */}
+            <div className="flex flex-wrap gap-2 mb-6">
+              {["Driving Range", "Pro Shop", "Restaurant"].map((tag) => (
+                <span
+                  key={tag}
+                  className="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm"
+                >
+                  {tag} ✕
+                </span>
+              ))}
+            </div>
+
+            <button className="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-md font-semibold flex items-center justify-center gap-2">
+              <Search className="w-5 h-5" />
+              <span>Find Courses</span>
             </button>
-          ))}
+          </div>
+
+          {/* Footer */}
+          <div className="mt-4 text-sm text-gray-600 flex justify-between">
+            <span>Showing 3 of 27 nearby courses</span>
+            <a href="#" className="text-blue-600 hover:underline">
+              View All Courses
+            </a>
+          </div>
+        </div>
+
+        {/* Right Section - Map */}
+        <div className="w-full lg:w-1/2">
+          <img
+            src={mapImage} // Replace this with your map image path
+            alt="Map showing course locations"
+            className="w-full rounded-2xl"
+          />
         </div>
       </div>
-
-      {/* Course Cards */}
-      <div className="w-full max-w-3xl mx-auto flex flex-col gap-6">
-        {golfCourses.map((course) => (
-          <div
-            key={course.name}
-            className="flex flex-col md:flex-row bg-white rounded-xl shadow-sm overflow-hidden relative transition hover:shadow-lg"
-          >
-            {/* Course Image */}
-            <img
-              src={course.img}
-              alt={course.name}
-              className="w-full md:w-48 h-48 md:h-auto object-cover"
-            />
-
-            {/* Course Details */}
-            <div className="flex-1 px-5 py-5 flex flex-col justify-between relative">
-              <div>
-                <h2 className="text-xl font-bold text-black">
-                  {course.name}
-                </h2>
-                <div className="text-gray-600 mt-1 mb-2">
-                  {course.location} &bull; {course.distance}
-                </div>
-
-                <div className="flex items-center gap-2 mb-2 flex-wrap">
-                  <RatingStars rating={course.rating} />
-                  <span className="ml-1 text-yellow-600 font-semibold">
-                    {course.rating}
-                  </span>
-                  <span className="text-gray-500">
-                    ({course.reviews} reviews)
-                  </span>
-                </div>
-
-                <div className="flex flex-wrap gap-2 mt-2">
-                  {course.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium border border-gray-200"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <button className="mt-4 w-fit bg-green-900 text-white px-7 py-2 rounded-full font-semibold shadow hover:bg-green-800 transition">
-                View Details
-              </button>
-            </div>
-
-            {/* Discount Badge */}
-            <div className="absolute top-4 right-4 md:right-7">
-              <span className="bg-yellow-300 text-yellow-900 rounded-md px-3 py-1 text-sm font-semibold shadow">
-                Save {course.savings}%
-              </span>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
+    </section>
   );
 }

@@ -48,7 +48,7 @@ export default function CouponsDeals() {
   return (
     <div className="px-4 py-10 w-full bg-white overflow-x-hidden">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-green-900 text-center mb-10 mt-2">
+        <h2 className="text-3xl md:text-4xl font-bold text-black text-center mb-10 mt-2">
           Exclusive Coupons &amp; Deals
         </h2>
         <div className="flex flex-col md:flex-row md:flex-wrap justify-center gap-6">
@@ -81,7 +81,7 @@ export default function CouponsDeals() {
                   {coupon.description}
                 </p>
                 <div className="flex-grow" />
-                <button className="mt-6 bg-[#ead66a] hover:bg-[#d7c559] shadow rounded-full text-[#3f3f1b] font-semibold text-lg py-2 w-full transition">
+                <button className="mt-6 bg-[#27AE60] hover:bg-[#d7c559] shadow rounded-full text-white font-semibold text-lg py-2 w-full transition">
                   Redeem Now
                 </button>
               </div>

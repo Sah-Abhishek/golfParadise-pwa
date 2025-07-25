@@ -1,24 +1,39 @@
 // src/components/Navbar.jsx
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 100);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <nav className="bg-black shadow-md">
-      <div className="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8">
+    <nav
+      className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${isScrolled ? 'bg-white shadow-md' : 'bg-transparent'
+        }`}
+    >
+      <div className={`mt-4 rounded-full max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8 transition-all duration-300`}>
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="text-2xl font-bold text-yellow-500">ParadiseGolf</div>
+          <div className={`text-2xl font-bold ${isScrolled ? 'text-black' : 'text-white'}`}>
+            Paradise
+            <span className={`ml-2 ${isScrolled ? 'text-green-500' : 'text-green-400'}`}>
+              Golf
+            </span>
+          </div>
 
           {/* Hamburger icon */}
           <div className="md:hidden">
-            <button
-              onClick={toggleMenu}
-              className="text-white focus:outline-none"
-            >
+            <button onClick={toggleMenu} className={`${isScrolled ? 'text-black' : 'text-white'} focus:outline-none`}>
               <svg
                 className="w-6 h-6"
                 fill="none"
@@ -27,19 +42,9 @@ const Navbar = () => {
                 xmlns="http://www.w3.org/2000/svg"
               >
                 {isOpen ? (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 ) : (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                 )}
               </svg>
             </button>
@@ -47,11 +52,12 @@ const Navbar = () => {
 
           {/* Menu Items */}
           <div className="hidden md:flex space-x-10">
-            {["Home", "Courses", "Memberships", "Events", "Support"].map((item) => (
+            {["Home", "Tee Time", "Memberships", "Events", "Support"].map((item) => (
               <a
                 key={item}
                 href="#"
-                className="text-white hover:text-blue-500 flex items-center gap-1"
+                className={`font-semibold text-l flex items-center gap-1 hover:text-gray-500 transition-colors duration-300 ${isScrolled ? 'text-black' : 'text-white'
+                  }`}
               >
                 {item}
                 {item !== "Home" && (
@@ -71,24 +77,25 @@ const Navbar = () => {
           </div>
 
           {/* Call-to-action button */}
-          <div className="hidden md:block text-l font-medium p-3 text-gray-800 bg-yellow-500 rounded-full">
+          <div className="hidden md:block text-l font-medium p-3 text-gray-800 bg-green-500 rounded-full">
             Join Now
           </div>
         </div>
 
         {/* Mobile menu */}
         {isOpen && (
-          <div className="md:hidden mt-4 space-y-2">
+          <div className="md:hidden bg-white mt-4 space-y-2 rounded-lg p-4 font-semibold">
             {["Home", "Courses", "Memberships", "Events", "Support"].map((item) => (
               <a
                 key={item}
                 href="#"
-                className="block text-white hover:text-blue-500 px-2 py-1"
+                className={`block px-2 py-1 hover:text-blue-500 text-black
+                  }`}
               >
                 {item}
               </a>
             ))}
-            <div className="mt-2 text-l font-medium p-3 text-gray-800 bg-yellow-500 rounded-full inline-block">
+            <div className="mt-2 font-semibold text-l font-medium p-3 text-gray-800 bg-green-500 rounded-full inline-block">
               Join Now
             </div>
           </div>

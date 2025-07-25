@@ -18,9 +18,10 @@ function App() {
         <Navbar />
         <Hero />
         <Benifits />
-        <VideoSection />
-        <MembershipPlans />
+        {/* <VideoSection /> */}
         <FindCourse />
+
+        <MembershipPlans />
         <CouponsDeals />
         <Gallery />
         <DownloadAppComponent />

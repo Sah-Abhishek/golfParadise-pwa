@@ -1,6 +1,6 @@
 const VideoSection = () => {
   return (
-    <div className="bg-green-900 p-8 flex flex-col items-center justify-center space-y-8">
+    <div className="bg-green-500 p-8 flex flex-col items-center justify-center space-y-8">
       <div className="text-4xl text-center font-bold text-white">
         The Paradise Experience
       </div>

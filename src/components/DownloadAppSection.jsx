@@ -1,19 +1,61 @@
+import { CreditCard, Grid3X3, MapPin } from 'lucide-react';
 import React from 'react';
 
 export default function DownloadAppComponent() {
   return (
-    <div className="bg-[#1a4d32] flex justify-between items-center w-full h-[700px] px-[60px] py-[40px] relative overflow-hidden">
+    <div className="bg-[#27AE60] flex flex-col lg:flex-row justify-between items-start lg:items-center w-full min-h-[700px] px-6 sm:px-12 lg:px-[60px] py-10 lg:py-[40px] relative overflow-hidden">
       {/* Left section: Text and Buttons */}
-      <div className="flex flex-col justify-center w-[500px] relative z-10">
-        <h2 className="text-white text-[48px] font-bold mb-[24px] leading-tight tracking-tight">
+      <div className="flex flex-col justify-center w-full lg:w-[500px] relative z-10">
+        <h2 className="text-white text-3xl sm:text-4xl lg:text-[48px] font-bold mb-6 sm:mb-8 leading-tight tracking-tight">
           Download the App
         </h2>
-        <p className="text-white/80 text-[18px] mb-[40px] leading-relaxed font-normal max-w-[420px]">
-          Access coupons, digital cards, and tee times anytime, anywhere.
+        <p className="text-lg sm:text-xl text-green-100 mb-8 sm:mb-12 leading-relaxed max-w-lg">
+          Get the most out of your Paradise Golf membership with our mobile app.
+          Find courses, redeem coupons, and track your savings on the go.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 sm:gap-[20px]">
+        <div className="flex flex-col items-start space-y-6 sm:space-y-8 mb-8 sm:mb-12">
+          {/* Digital Membership Card */}
+          <div className="flex items-start gap-4">
+            <div className="flex-shrink-0 w-8 h-8 bg-green-400 bg-opacity-20 rounded-lg flex items-center justify-center mt-1">
+              <CreditCard className="w-5 h-5 text-white" />
+            </div>
+            <div>
+              <h3 className="text-lg text-white sm:text-xl font-semibold mb-1 sm:mb-2">Digital Membership Card</h3>
+              <p className="text-green-100 leading-relaxed max-w-xs sm:max-w-sm">
+                Always have your membership card with you. No more forgetting your physical card at home.
+              </p>
+            </div>
+          </div>
+
+          {/* Easy Coupon Redemption */}
+          <div className="flex items-start gap-4">
+            <div className="flex-shrink-0 w-8 h-8 bg-green-400 bg-opacity-20 rounded-lg flex items-center justify-center mt-1">
+              <Grid3X3 className="w-5 h-5 text-white" />
+            </div>
+            <div>
+              <h3 className="text-white text-lg sm:text-xl font-semibold mb-1 sm:mb-2">Easy Coupon Redemption</h3>
+              <p className="text-green-100 leading-relaxed max-w-xs sm:max-w-sm">
+                Simply scan QR codes at participating courses to instantly redeem your discounts.
+              </p>
+            </div>
+          </div>
+
+          {/* Course Finder */}
+          <div className="flex items-start gap-4">
+            <div className="flex-shrink-0 w-8 h-8 bg-green-400 bg-opacity-20 rounded-lg flex items-center justify-center mt-1">
+              <MapPin className="w-5 h-5 text-white" />
+            </div>
+            <div>
+              <h3 className="text-white text-lg sm:text-xl font-semibold mb-1 sm:mb-2">Course Finder</h3>
+              <p className="text-green-100 leading-relaxed max-w-xs sm:max-w-sm">
+                Discover new courses near you or at your travel destination with our interactive map.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-[20px] w-full max-w-md">
           {/* App Store Button */}
-          <button className="bg-black rounded-[8px] py-[12px] px-[20px] flex items-center gap-3 hover:bg-gray-900 transition-all duration-200 w-full sm:w-auto">
+          <button className="bg-black rounded-[8px] py-3 px-5 flex items-center gap-3 hover:bg-gray-900 transition-all duration-200 w-full sm:w-auto">
             {/* Apple Icon */}
             <div className="w-[28px] h-[28px] flex items-center justify-center">
               <svg viewBox="0 0 24 24" className="w-[24px] h-[24px] fill-white" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
@@ -21,13 +63,13 @@ export default function DownloadAppComponent() {
               </svg>
             </div>
             <span className="text-white leading-tight font-medium text-left">
-              <span className="block text-[11px] font-normal opacity-90">Download on the</span>
-              <span className="block text-[18px] mt-[-1px] font-semibold">App Store</span>
+              <span className="block text-xs sm:text-[11px] font-normal opacity-90">Download on the</span>
+              <span className="block text-lg sm:text-[18px] mt-[-1px] font-semibold">App Store</span>
             </span>
           </button>
 
           {/* Google Play Button */}
-          <button className="bg-black rounded-[8px] py-[12px] px-[20px] flex items-center gap-3 hover:bg-gray-900 transition-all duration-200 w-full sm:w-auto">
+          <button className="bg-black rounded-[8px] py-3 px-5 flex items-center gap-3 hover:bg-gray-900 transition-all duration-200 w-full sm:w-auto">
             {/* Google Play Icon */}
             <div className="w-[28px] h-[28px] flex items-center justify-center">
               <svg viewBox="0 0 24 24" className="w-[24px] h-[24px]" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
@@ -38,15 +80,15 @@ export default function DownloadAppComponent() {
               </svg>
             </div>
             <span className="text-white leading-tight font-medium text-left">
-              <span className="block text-[11px] font-normal opacity-90">GET IT ON</span>
-              <span className="block text-[18px] mt-[-1px] font-semibold">Google Play</span>
+              <span className="block text-xs sm:text-[11px] font-normal opacity-90">GET IT ON</span>
+              <span className="block text-lg sm:text-[18px] mt-[-1px] font-semibold">Google Play</span>
             </span>
           </button>
         </div>
       </div>
 
       {/* Right section: Phone Mockup */}
-      <div className="hidden lg:flex relative justify-center items-center min-w-[320px]">
+      <div className="hidden lg:flex relative justify-center items-center min-w-[320px] mt-10 lg:mt-0">
         {/* Yellow background frame */}
         <div className="absolute rounded-[32px] w-[280px] h-[480px] bg-[#f4d03f] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-0 shadow-2xl"></div>
 
@@ -125,25 +167,9 @@ export default function DownloadAppComponent() {
                   <div className="bg-white rounded-lg p-3 flex items-center justify-between">
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 bg-gray-200 rounded-full"></div>
-                      <span className="text-sm font-medium text-gray-800">Meet Golly</span>
+                      <span className="text-sm font-medium text-gray-800">Leaderboard</span>
                     </div>
                     <div className="text-gray-400">›</div>
-                  </div>
-
-                  <div className="bg-white rounded-lg p-3 flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 bg-gray-200 rounded-full"></div>
-                      <span className="text-sm font-medium text-gray-800">Golf Course</span>
-                    </div>
-                    <div className="text-gray-400">›</div>
-                  </div>
-                </div>
-
-                {/* Bottom navigation */}
-                <div className="absolute bottom-0 left-0 right-0 h-16 bg-[#ff6b35] flex items-center justify-center">
-                  <div className="flex items-center gap-2 text-white">
-                    <div className="w-6 h-6 bg-white/20 rounded"></div>
-                    <span className="font-semibold">Book Now</span>
                   </div>
                 </div>
               </div>
