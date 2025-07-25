@@ -13,7 +13,7 @@ import {
 
 export default function MembershipPlans() {
   return (
-    <div className="bg-white text-black p-8">
+    <div className="bg-white text-black pt-4 pr-8 pl-8 pb-4" >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">

@@ -1,10 +1,10 @@
 import React from "react";
-import mapImage from "../assets/findCourse.png"
+import mapImage from "../assets/findCourse.png";
 import { Search } from "lucide-react";
 
 export default function CourseFinder() {
   return (
-    <section className="bg-gray-100 py-16 px-4 md:px-8">
+    <section className="bg-white mt-4 pb-16 px-4 md:px-8">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
         {/* Left Section */}
         <div className="w-full lg:w-1/2">
@@ -15,6 +15,15 @@ export default function CourseFinder() {
             Discover top-rated golf courses in your area that accept Paradise Golf Card.
             Filter by distance, amenities, and more.
           </p>
+
+          {/* Mobile Image */}
+          <div className="mb-8 lg:hidden">
+            <img
+              src={mapImage}
+              alt="Map showing course locations"
+              className="w-full rounded-2xl"
+            />
+          </div>
 
           <div className="bg-white p-6 rounded-2xl shadow-md">
             {/* Input Fields */}
@@ -58,10 +67,10 @@ export default function CourseFinder() {
           </div>
         </div>
 
-        {/* Right Section - Map */}
-        <div className="w-full lg:w-1/2">
+        {/* Right Section - Map (hidden on mobile) */}
+        <div className="w-full lg:w-1/2 hidden lg:block">
           <img
-            src={mapImage} // Replace this with your map image path
+            src={mapImage}
             alt="Map showing course locations"
             className="w-full rounded-2xl"
           />
