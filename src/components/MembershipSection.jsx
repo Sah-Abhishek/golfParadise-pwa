@@ -153,7 +153,7 @@ export default function MembershipPlans() {
 
         {/* Centered Explore Button */}
         <div className="flex justify-center mt-12">
-          <button className="bg-yellow-500 hover:bg-yellow-600 text-gray-800 font-semibold px-8 py-3 rounded-full text-lg transition-colors duration-200">
+          <button className="bg-yellow-500 hover:bg-yellow-600 text-gray-800 font-semibold px-8 py-3 rounded-full text-xs sm:text-lg transition-colors duration-200">
             Explore Membership Options
           </button>
         </div>

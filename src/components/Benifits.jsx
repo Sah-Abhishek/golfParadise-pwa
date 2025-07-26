@@ -131,7 +131,7 @@ export default function Benefits() {
 
         {/* CTA Button */}
         <div className="flex justify-center">
-          <button className="bg-yellow-500 hover:bg-yellow-600 text-gray-800 font-semibold px-8 py-3 rounded-full text-lg transition-colors duration-200">
+          <button className="bg-yellow-500 hover:bg-yellow-600 text-gray-800 font-semibold px-8 py-3 rounded-full sm:text-lg text-xs transition-colors duration-200">
             Explore Membership Options
           </button>
         </div>

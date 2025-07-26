@@ -21,7 +21,7 @@ const Navbar = () => {
       className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${isScrolled ? 'bg-white shadow-md' : 'bg-transparent'
         }`}
     >
-      <div className="mt-4 rounded-full max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8 transition-all duration-300">
+      <div className="sm:mt-4 rounded-full max-w-7xl mx-auto px-4 sm:py-4 sm:px-6 lg:px-8 transition-all duration-300">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className={`text-2xl font-bold ${isScrolled ? 'text-black' : 'text-white'}`}>
@@ -32,10 +32,11 @@ const Navbar = () => {
           </div>
 
           {/* Hamburger icon */}
-          <div className="md:hidden">
+          <div className="md:hidden ml-auto">
             <button
               onClick={toggleMenu}
               className={`${isScrolled ? 'text-black' : 'text-white'} focus:outline-none`}
+              aria-label="Toggle menu"
             >
               <svg
                 className="w-6 h-6"
@@ -53,8 +54,8 @@ const Navbar = () => {
             </button>
           </div>
 
-          {/* Menu Items */}
-          <div className="hidden md:flex space-x-10">
+          {/* Desktop Menu Items */}
+          <div className="hidden md:flex space-x-10 mr-10">
             {["Home", "Golf Courses", "Memberships", "Tee Times", "Events", "Support"].map((item) => (
               <a
                 key={item}
@@ -79,7 +80,7 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Call-to-action button */}
+          {/* Call-to-action buttons */}
           <div className="flex flex-row items-center space-x-2">
             <div className="hidden md:block text-l font-medium p-3 text-gray-800 bg-green-500 rounded-full">
               Join Now
@@ -94,23 +95,43 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile menu */}
-      {isOpen && (
-        <div className="md:hidden bg-white mt-4 space-y-2 rounded-lg p-4 font-semibold">
-          {["Home", "Courses", "Memberships", "Events", "Support"].map((item) => (
+      {/* Mobile Menu Backdrop */}
+      {/* <div */}
+      {/*   className={`fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden transition-opacity duration-300 ${isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none' */}
+      {/*     }`} */}
+      {/*   onClick={() => setIsOpen(false)} */}
+      {/* /> */}
+
+      {/* Sliding Mobile Menu from Left */}
+      <div
+        className={`fixed top-0 left-0 h-full w-4/5 bg-white shadow-lg z-50 md:hidden transform transition-transform duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full'
+          }`}
+      >
+        <nav className="flex flex-col p-6 space-y-4">
+          {["Home", "Golf Courses", "Memberships", "Tee Times", "Events", "Support"].map((item) => (
             <a
               key={item}
               href="#"
-              className="block px-2 py-1 hover:text-blue-500 text-black"
+              className="text-black font-semibold text-lg flex items-center justify-between"
+              onClick={() => setIsOpen(false)} // closes menu on link click
             >
               {item}
+              {item !== "Home" && (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-4 w-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              )}
             </a>
           ))}
-          <div className="mt-2 font-semibold text-l font-medium p-3 text-gray-800 bg-green-500 rounded-full inline-block">
-            Join Now
-          </div>
-        </div>
-      )}
+        </nav>
+      </div>
     </nav>
   );
 };
