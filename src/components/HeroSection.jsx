@@ -24,10 +24,10 @@ const Hero = () => {
           <div className="flex justify-end">
             <div className="max-w-xl space-y-6">
               <h1 className="text-4xl md:text-6xl font-bold text-white drop-shadow-lg">
-                Where Elite Golfers Belong
+                Your Gateway to the Ultimate Golf Experience
               </h1>
               <p className="text-lg md:text-xl text-white/90">
-                Join 200+ top-tier courses and a community of passionate golfers
+                Join a growing community of golf enthusiasts with access to 50+ premium courses
               </p>
 
               {/* Buttons Layout */}

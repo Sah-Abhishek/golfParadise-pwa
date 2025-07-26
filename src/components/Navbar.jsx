@@ -21,7 +21,7 @@ const Navbar = () => {
       className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${isScrolled ? 'bg-white shadow-md' : 'bg-transparent'
         }`}
     >
-      <div className={`mt-4 rounded-full max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8 transition-all duration-300`}>
+      <div className="mt-4 rounded-full max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8 transition-all duration-300">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className={`text-2xl font-bold ${isScrolled ? 'text-black' : 'text-white'}`}>
@@ -33,7 +33,10 @@ const Navbar = () => {
 
           {/* Hamburger icon */}
           <div className="md:hidden">
-            <button onClick={toggleMenu} className={`${isScrolled ? 'text-black' : 'text-white'} focus:outline-none`}>
+            <button
+              onClick={toggleMenu}
+              className={`${isScrolled ? 'text-black' : 'text-white'} focus:outline-none`}
+            >
               <svg
                 className="w-6 h-6"
                 fill="none"
@@ -52,7 +55,7 @@ const Navbar = () => {
 
           {/* Menu Items */}
           <div className="hidden md:flex space-x-10">
-            {["Home", "Tee Time", "Memberships", "Events", "Support"].map((item) => (
+            {["Home", "Golf Courses", "Memberships", "Tee Times", "Events", "Support"].map((item) => (
               <a
                 key={item}
                 href="#"
@@ -77,30 +80,37 @@ const Navbar = () => {
           </div>
 
           {/* Call-to-action button */}
-          <div className="hidden md:block text-l font-medium p-3 text-gray-800 bg-green-500 rounded-full">
+          <div className="flex flex-row items-center space-x-2">
+            <div className="hidden md:block text-l font-medium p-3 text-gray-800 bg-green-500 rounded-full">
+              Join Now
+            </div>
+            <div
+              className={`hidden md:block text-l font-medium p-2 px-4 border-2 border-green-500 rounded-full ${isScrolled ? 'text-green-500' : 'text-white'
+                }`}
+            >
+              Login
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile menu */}
+      {isOpen && (
+        <div className="md:hidden bg-white mt-4 space-y-2 rounded-lg p-4 font-semibold">
+          {["Home", "Courses", "Memberships", "Events", "Support"].map((item) => (
+            <a
+              key={item}
+              href="#"
+              className="block px-2 py-1 hover:text-blue-500 text-black"
+            >
+              {item}
+            </a>
+          ))}
+          <div className="mt-2 font-semibold text-l font-medium p-3 text-gray-800 bg-green-500 rounded-full inline-block">
             Join Now
           </div>
         </div>
-
-        {/* Mobile menu */}
-        {isOpen && (
-          <div className="md:hidden bg-white mt-4 space-y-2 rounded-lg p-4 font-semibold">
-            {["Home", "Courses", "Memberships", "Events", "Support"].map((item) => (
-              <a
-                key={item}
-                href="#"
-                className={`block px-2 py-1 hover:text-blue-500 text-black
-                  }`}
-              >
-                {item}
-              </a>
-            ))}
-            <div className="mt-2 font-semibold text-l font-medium p-3 text-gray-800 bg-green-500 rounded-full inline-block">
-              Join Now
-            </div>
-          </div>
-        )}
-      </div>
+      )}
     </nav>
   );
 };
