@@ -81,11 +81,11 @@ const featureLabels = [
 ];
 
 const TogglePlans = () => {
-  const [selectedPlan, setSelectedPlan] = useState('winter');
+  const [selectedPlan, setSelectedPlan] = useState('allYear');
   const plan = plans[selectedPlan];
 
   return (
-    <div className="py-12 px-4 sm:px-6 lg:px-12">
+    <div className="pt-6 px-4 sm:px-6 lg:px-12">
       <div className="text-center mb-10">
         <h2 className="text-3xl font-extrabold text-gray-900 mb-2">
           Choose Your Perfect Golf Experience
@@ -105,8 +105,8 @@ const TogglePlans = () => {
             key={id}
             onClick={() => setSelectedPlan(id)}
             className={`px-6 py-3 rounded-xl text-center text-sm sm:text-base font-semibold transition ${selectedPlan === id
-                ? 'bg-yellow-300 text-emerald-800'
-                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+              ? 'bg-yellow-500 text-black'
+              : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
               }`}
           >
             {label}
@@ -166,6 +166,12 @@ const TogglePlans = () => {
             ))}
           </tbody>
         </table>
+
+        <div className="flex mt-10 justify-center">
+          <button className="bg-yellow-500 hover:bg-yellow-600 text-gray-800 font-semibold px-8 mb-10 py-3 rounded-full sm:text-lg text-xs transition-colors duration-200">
+            Explore Membership Plans
+          </button>
+        </div>
       </div>
     </div>
   );

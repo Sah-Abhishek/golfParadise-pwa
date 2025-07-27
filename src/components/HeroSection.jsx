@@ -34,10 +34,10 @@ const Hero = () => {
               <div className="space-y-4">
                 {/* Top row: View Plans + Tee Time Booking */}
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <button className="bg-green-500 hover:bg-green-600 text-black font-semibold px-12 sm:px-6 py-2 sm:py-3 rounded-full w-fit">
+                  <button className="bg-green-500 hover:bg-white text-black font-semibold px-12 sm:px-6 py-2 sm:py-3 rounded-full w-fit">
                     View Plans
                   </button>
-                  <button className="bg-green-500 hover:bg-green-600 text-black font-semibold px-6 sm:px-6 py-2 sm:py-3 rounded-full w-fit">
+                  <button className="bg-green-500 hover:bg-white text-black font-semibold px-6 sm:px-6 py-2 sm:py-3 rounded-full w-fit">
                     Tee Time Booking
                   </button>
                 </div>

@@ -21,7 +21,7 @@ export default function CourseFinder() {
       );
 
   return (
-    <section className="bg-white mt-4 pb-16 px-4 md:px-8">
+    <section className="bg-white mt-2 sm:pb-8  px-4 md:px-8">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
         {/* Left Section */}
         <div className="w-full mt-15 lg:w-1/2">
