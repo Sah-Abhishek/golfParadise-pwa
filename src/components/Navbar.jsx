@@ -1,4 +1,5 @@
 import logoImage from '/logoGreen.png';
+import logoImageWhite from '/PG-2-white(1).png'
 import React, { useState, useEffect } from 'react';
 
 const Navbar = () => {
@@ -27,10 +28,10 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex flex-row gap-x-2">
-            <img src={logoImage} alt="Paradise Golf Logo" className="h-8 w-auto" />
-            <div className={`text-2xl font-bold ${textColor}`}>
-              Paradise <span className={`ml-2 ${isScrolled ? 'text-green-500' : 'text-green-400'}`}>Golf</span>
-            </div>
+            <img src={isScrolled ? logoImage : logoImageWhite} alt="Paradise Golf Logo" className="h-8 w-auto" />
+            {/* <div className={`text-2xl font-bold ${textColor}`}> */}
+            {/*   Paradise <span className={`ml-2 ${isScrolled ? 'text-red-500' : 'text-red-400'}`}>Golf</span> */}
+            {/* </div> */}
           </div>
 
           {/* Hamburger icon */}
