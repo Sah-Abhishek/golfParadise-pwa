@@ -70,9 +70,9 @@ const Navbar = () => {
             <div className="relative group">
               <button className={`font-semibold flex items-center gap-1 ${textColor} hover:text-green-500 transition`}>
                 Tee Times
-                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                </svg>
+                {/* <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"> */}
+                {/*   <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /> */}
+                {/* </svg> */}
               </button>
               {/* <div className="absolute left-0 mt-2 w-52 bg-white shadow-lg rounded-md py-2 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"> */}
               {/*   <a href="/tee-times/public" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Public Tee Times</a> */}
@@ -132,9 +132,9 @@ const Navbar = () => {
           {/* Mobile Tee Times Dropdown */}
           <button onClick={() => setMobileTeeTimesOpen(!mobileTeeTimesOpen)} className="text-black font-semibold text-lg flex items-center justify-between">
             Tee Times
-            <svg className={`h-4 w-4 transform transition-transform ${mobileTeeTimesOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-            </svg>
+            {/* <svg className={`h-4 w-4 transform transition-transform ${mobileTeeTimesOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"> */}
+            {/*   <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /> */}
+            {/* </svg> */}
           </button>
           {mobileTeeTimesOpen && (
             <div className="pl-4 space-y-2 text-sm">
