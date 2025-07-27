@@ -90,6 +90,28 @@ export default function CourseFinder() {
                 <p className="text-gray-500 text-sm">
                   {course.city}, FL {course.zipCode}
                 </p>
+
+                {/* Phone Number */}
+                {course.phone && (
+                  <p className="text-sm text-gray-700 mt-1">
+                    📞 <a href={`tel:${course.phone}`} className="underline">{course.phone}</a>
+                  </p>
+                )}
+
+                {/* Website */}
+                {course.website && (
+                  <p className="text-sm text-gray-700 mt-1">
+                    🌐{" "}
+                    <a
+                      href={course.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 hover:underline"
+                    >
+                      Visit Website
+                    </a>
+                  </p>
+                )}
               </div>
             ))}
           </div>
