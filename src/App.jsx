@@ -9,6 +9,9 @@ import Gallery from './components/Gallery'
 import DownloadAppComponent from './components/DownloadAppSection'
 import FootterSection from './components/FootterSection'
 import PlansComparison from './components/PlansComparison'
+import MembershipPlansSection from './components/MembershipsPlansSection'
+import TableComparisons from './components/TableComparisons'
+import NewTable from './components/NewTable'
 
 function App() {
 
@@ -19,8 +22,11 @@ function App() {
         <Hero />
         <Benifits />
         <FindCourse />
-        <MembershipPlans />
-        <PlansComparison />
+        {/* <MembershipPlansSection /> */}
+        {/* <MembershipPlans /> */}
+        {/* <PlansComparison /> */}
+        {/* <TableComparisons /> */}
+        <NewTable />
         <CouponsDeals />
         <Gallery />
         <DownloadAppComponent />

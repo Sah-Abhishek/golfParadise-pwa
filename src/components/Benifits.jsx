@@ -37,13 +37,13 @@ export default function Benefits() {
               <div className="flex items-start space-x-3">
                 <Check className="w-5 h-5 text-yellow-400 mt-1 flex-shrink-0" />
                 <span>
-                  Disconver new courses across the region with <span className='font-bold'>no long term commitment</span>
+                  Discover new courses across the region with <span className='font-bold'>no long term commitment</span>
                 </span>
               </div>
               <div className="flex items-start space-x-3">
                 <Check className="w-5 h-5 text-yellow-400 mt-1 flex-shrink-0" />
                 <span>
-                  Play at <span className='font-bold'>50+top tier golf courses</span>  without needing an annual memnership
+                  Play at 50+top tier golf courses
                 </span>
               </div>
               <div className="flex items-start space-x-3">
@@ -61,7 +61,7 @@ export default function Benefits() {
               <Trophy className="w-10 h-10 sm:w-12 sm:h-12 text-yellow-400" />
             </div>
             <h2 className="text-lg sm:text-xl font-bold text-center mb-4">
-              Extra Value for Members
+              Participate in Leagues and Tournaments
             </h2>
             {/* <p className="text-sm sm:text-base font-semibold text-yellow-400 text-center mb-6"> */}
             {/*   It's not just golf—it's a lifestyle */}
@@ -131,7 +131,7 @@ export default function Benefits() {
 
         {/* CTA Button */}
         <div className="flex justify-center">
-          <button className="bg-yellow-500 hover:bg-yellow-600 text-gray-800 font-semibold px-8 py-3 rounded-full sm:text-lg text-xs transition-colors duration-200">
+          <button className="bg-yellow-500 hover:bg-yellow-600 text-gray-800 font-semibold px-8 mb-10 py-3 rounded-full sm:text-lg text-xs transition-colors duration-200">
             Explore Membership Options
           </button>
         </div>
