@@ -1,19 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
+import golfCourses from "../data/golfCourses.json"; // Your JSON data
 import mapImage from "../assets/findCourse.png";
 import { Search } from "lucide-react";
 
 export default function CourseFinder() {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [searchQuery, setSearchQuery] = useState(""); // actual query to filter
+
+  const handleSearch = () => {
+    setSearchQuery(searchTerm.trim());
+  };
+
+  const filteredCourses =
+    searchQuery === ""
+      ? []
+      : golfCourses.filter((course) =>
+        course.courseName.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        course.city.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        course.zipCode.includes(searchQuery)
+      );
+
   return (
     <section className="bg-white mt-4 pb-16 px-4 md:px-8">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
         {/* Left Section */}
-        <div className="w-full lg:w-1/2">
+        <div className="w-full mt-15 lg:w-1/2">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
             Find Courses Near You
           </h2>
           <p className="text-gray-600 mb-8">
             Discover top-rated golf courses in your area that accept Paradise Golf Card.
-            Filter by distance, amenities, and more.
           </p>
 
           {/* Mobile Image */}
@@ -26,33 +42,21 @@ export default function CourseFinder() {
           </div>
 
           <div className="bg-white p-6 rounded-2xl shadow-md">
-            {/* Input Fields */}
-            <div className="flex flex-col sm:flex-row gap-4 mb-4">
+            {/* Input Field */}
+            <div className="flex gap-4 mb-6">
               <input
                 type="text"
-                placeholder="City or zip code"
-                className="w-full sm:w-1/2 px-4 py-2 border border-gray-300 rounded-md focus:outline-none"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                placeholder="Enter course name, city or zip"
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none"
               />
-              <select className="w-full sm:w-1/2 px-4 py-2 border border-gray-300 rounded-md focus:outline-none">
-                <option>25 miles</option>
-                <option>10 miles</option>
-                <option>50 miles</option>
-              </select>
             </div>
 
-            {/* Filter Tags */}
-            <div className="flex flex-wrap gap-2 mb-6">
-              {["Driving Range", "Pro Shop", "Restaurant"].map((tag) => (
-                <span
-                  key={tag}
-                  className="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm"
-                >
-                  {tag} ✕
-                </span>
-              ))}
-            </div>
-
-            <button className="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-md font-semibold flex items-center justify-center gap-2">
+            <button
+              onClick={handleSearch}
+              className="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-md font-semibold flex items-center justify-center gap-2"
+            >
               <Search className="w-5 h-5" />
               <span>Find Courses</span>
             </button>
@@ -60,10 +64,34 @@ export default function CourseFinder() {
 
           {/* Footer */}
           <div className="mt-4 text-sm text-gray-600 flex justify-between">
-            <span>Showing 3 of 27 nearby courses</span>
+            <span>
+              {filteredCourses.length > 0
+                ? `Showing ${filteredCourses.length} of ${golfCourses.length} courses`
+                : searchQuery !== ""
+                  ? "No courses found"
+                  : ""}
+            </span>
             <a href="#" className="text-blue-600 hover:underline">
               View All Courses
             </a>
+          </div>
+
+          {/* Render Results */}
+          <div className="mt-6 space-y-4">
+            {filteredCourses.map((course) => (
+              <div
+                key={course.id}
+                className="p-4 border border-gray-200 rounded-xl shadow-sm"
+              >
+                <h3 className="text-lg font-semibold text-gray-800">
+                  {course.courseName}
+                </h3>
+                <p className="text-gray-600 text-sm">{course.address}</p>
+                <p className="text-gray-500 text-sm">
+                  {course.city}, FL {course.zipCode}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
 

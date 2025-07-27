@@ -82,12 +82,11 @@ const featureLabels = [
 
 const TogglePlans = () => {
   const [selectedPlan, setSelectedPlan] = useState('winter');
-
   const plan = plans[selectedPlan];
 
   return (
-    <div className=" py-12 px-4 sm:px-6 lg:px-12">
-      {/* Toggle */}
+    <div className="py-12 px-4 sm:px-6 lg:px-12">
+      {/* Heading */}
       <div className="text-center mb-10">
         <h2 className="text-3xl font-extrabold text-gray-900 mb-2">
           Choose Your Perfect Golf Experience
@@ -96,6 +95,8 @@ const TogglePlans = () => {
           Explore our flexible membership options tailored to your golfing lifestyle.
         </p>
       </div>
+
+      {/* Toggle Buttons */}
       <div className="flex justify-center mb-8 space-x-4">
         {[
           { id: 'allYear', label: 'All Year Round', sub: '12 Months' },
@@ -116,16 +117,18 @@ const TogglePlans = () => {
         ))}
       </div>
 
-      {/* Table */}
-      <div className="overflow-x-auto">
-        <table className="min-w-full table-fixed border-collapse text-sm sm:text-base border border-gray-200 rounded-lg overflow-hidden">
+      {/* Pricing Table */}
+      <div className="overflow-x-auto sm:mx-90">
+        <table className="min-w-full table-fixed border-separate border-spacing-0 text-sm sm:text-base">
           <thead>
-            <tr className="bg-gray-100 text-gray-700">
-              <th className="w-1/3 px-4 py-3 text-left font-semibold border">Membership Features</th>
+            <tr className="bg-gray-100 text-gray-700 border-b border-gray-200">
+              <th className="w-1/3 px-4 py-3 text-left font-semibold">
+                Membership Features
+              </th>
               {tiers.map((tier, idx) => (
                 <th
                   key={idx}
-                  className={`px-4 py-3 text-center font-semibold border ${tier === 'PLATINUM' ? 'text-emerald-700' : ''
+                  className={`px-4 py-3 text-center font-semibold ${tier === 'PLATINUM' ? 'text-emerald-700' : ''
                     }`}
                 >
                   <div className="uppercase font-bold">{tier}</div>
@@ -136,13 +139,17 @@ const TogglePlans = () => {
           </thead>
           <tbody>
             {plan.data.map((row, i) => (
-              <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
-                <td className="px-4 py-3 border text-gray-800 flex items-center gap-2">
+              <tr
+                key={i}
+                className={`${i % 2 === 0 ? 'bg-white' : 'bg-gray-50'
+                  } border-b border-gray-200`}
+              >
+                <td className="px-4 py-3 text-gray-800 flex items-center gap-2">
                   {featureLabels[i].icon}
                   {featureLabels[i].label}
                 </td>
                 {row.map((val, j) => (
-                  <td key={j} className="px-4 py-3 text-center border">
+                  <td key={j} className="px-4 py-3 text-center">
                     {val === '✅' ? (
                       <Check className="text-green-600 mx-auto" size={18} />
                     ) : val === '-' || val === '$' ? (
