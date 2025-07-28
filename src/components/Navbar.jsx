@@ -156,7 +156,7 @@ const Navbar = () => {
 
           {/* CTA Buttons */}
           <div className="flex items-center space-x-2">
-            <div className={`hidden md:block text-l font-medium p-3 text-white text-gray-800 bg-green-500 rounded-full`}> Buy Now</div>
+            <div className={`hidden md:block text-l font-medium p-3 text-white text-gray-800 bg-green-500 rounded-full`}><a href="#membership-card-component"> Buy Now</a></div>
             {/* <div className={`hidden md:block text-l font-medium p-2 px-4 border-2 border-green-500 rounded-full ${textColor}`}>Login</div> */}
           </div>
         </div>

@@ -1,7 +1,11 @@
 import { CreditCard, Grid3X3, MapPin } from 'lucide-react';
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function DownloadAppComponent() {
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
+  const handlePopupToggle = () => {
+    setIsPopupVisible(!isPopupVisible);
+  };
   return (
     <div className="bg-[#27AE60] flex flex-col lg:flex-row justify-between items-start lg:items-center w-full min-h-[700px] px-6 sm:px-12 lg:px-[60px] py-10 lg:py-[40px] relative overflow-hidden">
       {/* Left section: Text and Buttons */}
@@ -53,7 +57,10 @@ export default function DownloadAppComponent() {
             </div>
           </div>
         </div>
-        <div className="w-full flex flex-col sm:flex-row gap-4 sm:gap-[20px] w-full max-w-md">
+        <div
+          onClick={handlePopupToggle}
+
+          className="w-full flex flex-col sm:flex-row gap-4 sm:gap-[20px] w-full max-w-md">
           {/* App Store Button */}
           <button className="bg-black rounded-[8px] py-3 px-5 flex items-center gap-3 hover:bg-gray-900 transition-all duration-200 w-full sm:w-auto">
             {/* Apple Icon */}
@@ -69,7 +76,10 @@ export default function DownloadAppComponent() {
           </button>
 
           {/* Google Play Button */}
-          <button className="bg-black rounded-[8px] py-3 px-5 flex items-center gap-3 hover:bg-gray-900 transition-all duration-200 w-full sm:w-auto">
+          <button
+            onClick={handlePopupToggle}
+
+            className="bg-black rounded-[8px] py-3 px-5 flex items-center gap-3 hover:bg-gray-900 transition-all duration-200 w-full sm:w-auto">
             {/* Google Play Icon */}
             <div className="w-[28px] h-[28px] flex items-center justify-center">
               <svg viewBox="0 0 24 24" className="w-[24px] h-[24px]" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
@@ -179,7 +189,22 @@ export default function DownloadAppComponent() {
             </div>
           </div>
         </div>
-      </div>
+        {isPopupVisible && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+            <div className="bg-white p-6 rounded-lg shadow-xl w-80 md:w-96 text-center">
+              <h2 className="text-xl font-semibold text-gray-800">Coming Soon!</h2>
+              <p className="mt-4 text-gray-600">We are working hard on getting the app ready for Google Play. Stay tuned!</p>
+
+              {/* Close Button */}
+              <button
+                onClick={handlePopupToggle}
+                className="mt-4 bg-red-500 hover:bg-red-600 text-white py-2 px-6 rounded-full"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        )}     </div>
     </div>
   );
 }

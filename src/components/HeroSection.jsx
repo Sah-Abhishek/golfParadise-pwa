@@ -51,6 +51,7 @@ const Hero = () => {
                     {/* <FaPlay /> */}
                   </span>
                   Upcoming Tournaments
+
                 </button>
               </div>
             </div>
