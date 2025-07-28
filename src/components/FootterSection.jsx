@@ -6,10 +6,11 @@ export default function FootterSection() {
     <footer className="bg-black text-white">
       {/* Main Footer Content */}
       <div className="px-8 py-16">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* ParadiseGolf Section */}
           <div className="space-y-6">
-            <h3 className="text-[#f4d03f] text-xl font-bold">ParadiseGolf</h3>
+            {/* <h3 className="text-[#f4d03f] text-xl font-bold">ParadiseGolf</h3> */}
+            <img src='PG-2-white(1).png' className='h-12' />
             <p className="text-gray-400 leading-relaxed text-sm max-w-xs">
               The ultimate golf membership for passionate golfers seeking premium experiences at elite courses nationwide.
             </p>
@@ -39,11 +40,11 @@ export default function FootterSection() {
                   Home
                 </a>
               </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200 text-sm">
-                  Membership Benefits
-                </a>
-              </li>
+              {/* <li> */}
+              {/*   <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"> */}
+              {/*     Membership Benefits */}
+              {/*   </a> */}
+              {/* </li> */}
               <li>
                 <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200 text-sm">
                   Courses
@@ -94,22 +95,22 @@ export default function FootterSection() {
           </div>
 
           {/* Newsletter Section */}
-          <div className="space-y-6">
-            <h3 className="text-white text-lg font-semibold">Newsletter</h3>
-            <p className="text-gray-400 text-sm leading-relaxed">
-              Subscribe to get updates on new courses, promotions and events.
-            </p>
-            <div className="space-y-3">
-              <input
-                type="email"
-                placeholder="Your email address"
-                className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#f4d03f] transition-colors duration-200"
-              />
-              <button className="w-full bg-[#f4d03f] text-black font-semibold py-3 px-6 rounded-lg hover:bg-[#e6c136] transition-colors duration-200">
-                Subscribe
-              </button>
-            </div>
-          </div>
+          {/* <div className="space-y-6"> */}
+          {/*   <h3 className="text-white text-lg font-semibold">Newsletter</h3> */}
+          {/*   <p className="text-gray-400 text-sm leading-relaxed"> */}
+          {/*     Subscribe to get updates on new courses, promotions and events. */}
+          {/*   </p> */}
+          {/*   <div className="space-y-3"> */}
+          {/*     <input */}
+          {/*       type="email" */}
+          {/*       placeholder="Your email address" */}
+          {/*       className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#f4d03f] transition-colors duration-200" */}
+          {/*     /> */}
+          {/*     <button className="w-full bg-[#f4d03f] text-black font-semibold py-3 px-6 rounded-lg hover:bg-[#e6c136] transition-colors duration-200"> */}
+          {/*       Subscribe */}
+          {/*     </button> */}
+          {/*   </div> */}
+          {/* </div> */}
         </div>
       </div>
 

@@ -9,6 +9,7 @@ import DownloadAppComponent from '../components/DownloadAppSection'
 import FootterSection from '../components/FootterSection'
 import MembershipPlansSection from '../components/MembershipsPlansSection'
 import NewTable from '../components/NewTable'
+import MembershipPlansCardComponent from '../components/MembershipPlansCardComponent'
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
         <Hero />
         <Benifits />
         <FindCourse />
+        <MembershipPlansCardComponent />
         <MembershipPlansSection />
         {/* <MembershipPlans /> */}
         {/* <PlansComparison /> */}

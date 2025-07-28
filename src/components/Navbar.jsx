@@ -32,7 +32,7 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex flex-row gap-x-2">
             <Link to="/">
-              <img src={isScrolled ? logoImage : logoImageWhite} alt="Paradise Golf Logo" className="h-8 w-auto" />
+              <img src={isScrolled ? logoImage : logoImageWhite} alt="Paradise Golf Logo" className="h-10 sm:h-12 w-auto" />
               {/* <div className={`text-2xl font-bold ${textColor}`}> */}
               {/*   Paradise <span className={`ml-2 ${isScrolled ? 'text-red-500' : 'text-red-400'}`}>Golf</span> */}
               {/* </div> */}
@@ -156,8 +156,8 @@ const Navbar = () => {
 
           {/* CTA Buttons */}
           <div className="flex items-center space-x-2">
-            <div className="hidden md:block text-l font-medium p-3 text-gray-800 bg-green-500 rounded-full">Join Now</div>
-            <div className={`hidden md:block text-l font-medium p-2 px-4 border-2 border-green-500 rounded-full ${textColor}`}>Login</div>
+            <div className={`hidden md:block text-l font-medium p-3 text-white text-gray-800 bg-green-500 rounded-full`}> Buy Now</div>
+            {/* <div className={`hidden md:block text-l font-medium p-2 px-4 border-2 border-green-500 rounded-full ${textColor}`}>Login</div> */}
           </div>
         </div>
       </div>
@@ -234,7 +234,7 @@ const Navbar = () => {
           <a href="#" className="text-black font-semibold text-lg" onClick={() => setIsOpen(false)}>Contact</a>
         </nav>
       </div>
-    </nav>
+    </nav >
   );
 };
 

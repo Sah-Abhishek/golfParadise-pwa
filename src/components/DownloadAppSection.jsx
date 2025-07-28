@@ -53,7 +53,7 @@ export default function DownloadAppComponent() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col sm:flex-row gap-4 sm:gap-[20px] w-full max-w-md">
+        <div className="w-full flex flex-col sm:flex-row gap-4 sm:gap-[20px] w-full max-w-md">
           {/* App Store Button */}
           <button className="bg-black rounded-[8px] py-3 px-5 flex items-center gap-3 hover:bg-gray-900 transition-all duration-200 w-full sm:w-auto">
             {/* Apple Icon */}
@@ -84,6 +84,9 @@ export default function DownloadAppComponent() {
               <span className="block text-lg sm:text-[18px] mt-[-1px] font-semibold">Google Play</span>
             </span>
           </button>
+          {/* <div className='bg-black text-white rounde-lg'> */}
+          {/*   Coming Soon */}
+          {/* </div> */}
         </div>
       </div>
 
@@ -133,7 +136,7 @@ export default function DownloadAppComponent() {
                 {/* Course info */}
                 <div className="px-4 mb-4">
                   <div className="bg-white rounded-lg p-3">
-                    <div className="text-sm font-semibold text-gray-800 mb-1">Fairhills Golf</div>
+                    <div className="text-sm font-semibold text-gray-800 mb-1">Bardmoor GC</div>
                     <div className="text-xs text-gray-600">Monday Apr...</div>
                   </div>
                 </div>
@@ -143,7 +146,7 @@ export default function DownloadAppComponent() {
                   <div className="bg-white rounded-lg p-3 flex items-center justify-between">
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 bg-gray-200 rounded-full"></div>
-                      <span className="text-sm font-medium text-gray-800">AJ-Score</span>
+                      <span className="text-sm font-medium text-gray-800">Tee Times </span>
                     </div>
                     <div className="text-gray-400">›</div>
                   </div>
@@ -151,7 +154,7 @@ export default function DownloadAppComponent() {
                   <div className="bg-white rounded-lg p-3 flex items-center justify-between">
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 bg-[#8bc34a] rounded-full"></div>
-                      <span className="text-sm font-medium text-gray-800">Pool Booking</span>
+                      <span className="text-sm font-medium text-gray-800">Events</span>
                     </div>
                     <div className="text-gray-400">›</div>
                   </div>
@@ -159,7 +162,7 @@ export default function DownloadAppComponent() {
                   <div className="bg-white rounded-lg p-3 flex items-center justify-between">
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 bg-gray-200 rounded-full"></div>
-                      <span className="text-sm font-medium text-gray-800">Tee Times</span>
+                      <span className="text-sm font-medium text-gray-800">Tournaments</span>
                     </div>
                     <div className="text-gray-400">›</div>
                   </div>

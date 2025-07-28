@@ -115,11 +115,6 @@ const MembershipPlansSection = () => {
   return (
     <div className="max-w-6xl mx-auto p-6 pb-20 bg-white">
       <div className="text-center mb-8">
-        <h1 className="text-3xl font-bold text-gray-800 mb-8">Membership Plans</h1>
-        <p className="text-gray-400 mb-8 text-lg max-w-3xl mx-auto">
-          Choose the perfect membership to enhance your golfing experience and start
-          saving at over 200 elite courses nationwide.
-        </p>
 
         {/* Toggle Slider */}
         <div className="inline-flex bg-gray-100 rounded-lg p-1 mb-8">
@@ -154,8 +149,8 @@ const MembershipPlansSection = () => {
       </div>
 
       {/* Plan Cards Row */}
-      <div className="transition-all duration-500 ease-in-out">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="transition-all  duration-500 ease-in-out">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 scale-120 gap-6">
           {currentPlan.plans.map((plan, index) => (
             <div key={`${selectedPlan}-${index}`} className="relative">
               {/* Popular Badge */}
@@ -205,8 +200,8 @@ const MembershipPlansSection = () => {
 
                 {/* Join Button */}
                 <div className="flex-shrink-0 mt-4 text-center">
-                  <button className="w-32 bg-green-500 rounded-full text-white text-sm font-medium py-2 px-4 mx-auto block hover:bg-green-500 transition-colors duration-200">
-                    Join Now
+                  <button className="w-32 bg-yellow-500 rounded-full text-white text-sm font-medium py-2 px-4 mx-auto block hover:bg-yellow-500 transition-colors duration-200">
+                    Coming Soon
                   </button>
                 </div>
               </div>

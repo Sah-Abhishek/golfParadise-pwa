@@ -23,7 +23,7 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex flex-row gap-x-2">
             <Link to="/">
-              <img src={logoImage} alt="Paradise Golf Logo" className="h-8 w-auto" />
+              <img src={logoImage} alt="Paradise Golf Logo" className="h-10 sm:h-12 w-auto" />
             </Link>
           </div>
 
@@ -128,8 +128,8 @@ const Navbar = () => {
 
           {/* CTA Buttons */}
           <div className="flex items-center space-x-2">
-            <div className="hidden md:block text-l font-medium p-3 text-gray-800 bg-green-500 rounded-full cursor-pointer">Join Now</div>
-            <div className={`hidden md:block text-l font-medium p-2 px-4 border-2 border-green-500 rounded-full ${textColor} cursor-pointer`}>Login</div>
+            <div className="hidden md:block text-l font-medium p-3 text-gray-800 bg-green-500 rounded-full text-white cursor-pointer">Buy Now</div>
+            {/* <div className={`hidden md:block text-l font-medium p-2 px-4 border-2 border-green-500 rounded-full ${textColor} cursor-pointer`}>Login</div> */}
           </div>
         </div>
       </div>

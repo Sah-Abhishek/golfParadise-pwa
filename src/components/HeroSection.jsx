@@ -1,6 +1,7 @@
 import React from 'react';
 import heroVideo from './../assets/HeroVideo.mp4';
 import { FaPlay } from 'react-icons/fa';
+import { Link } from 'react-router-dom'; // Correct import for React Router Link
 
 const Hero = () => {
   return (
@@ -37,17 +38,19 @@ const Hero = () => {
                   <button className="bg-green-500 hover:bg-white text-black font-semibold px-12 sm:px-6 py-2 sm:py-3 rounded-full w-fit">
                     View Plans
                   </button>
-                  <button className="bg-green-500 hover:bg-white text-black font-semibold px-6 sm:px-6 py-2 sm:py-3 rounded-full w-fit">
+
+                  {/* Tee Time Booking as Link */}
+                  <Link to="https://www.paradiseteetimes.com/" className="bg-green-500 hover:bg-white text-black font-semibold px-6 sm:px-6 py-2 sm:py-3 rounded-full w-fit text-center inline-flex justify-center items-center">
                     Tee Time Booking
-                  </button>
+                  </Link>
                 </div>
 
                 {/* Bottom row: Watch Experience */}
                 <button className="flex items-center border-white border-2 text-white hover:bg-gray-200 hover:text-black font-semibold px-3 sm:px-6 py-1.5 sm:py-2 rounded-full w-fit">
                   <span className="mr-2">
-                    <FaPlay />
+                    {/* <FaPlay /> */}
                   </span>
-                  Watch Experience
+                  Upcoming Tournaments
                 </button>
               </div>
             </div>
