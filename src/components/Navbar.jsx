@@ -165,7 +165,7 @@ const Navbar = () => {
       {/* Mobile Menu */}
       <div className={`fixed top-0 left-0 h-full w-4/5 bg-white shadow-lg z-50 md:hidden transform transition-transform duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
         <nav className="flex flex-col p-6 space-y-4">
-          <a href="#" className="text-black font-semibold text-lg" onClick={() => setIsOpen(false)}>Home</a>
+          <Link to="/" className="text-black font-semibold text-lg" onClick={() => setIsOpen(false)}>Home</Link>
           {/* Mobile Golf Courses Dropdown */}
           <button onClick={() => setMobileGolfCoursesOpen(!mobileGolfCoursesOpen)} className="text-black font-semibold text-lg flex items-center justify-between">
             Golf Courses

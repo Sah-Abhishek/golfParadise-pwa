@@ -42,7 +42,7 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-10 mr-10">
-            <a href="#" className={`font-semibold ${textColor} hover:text-green-500 transition`}>Home</a>
+            <Link to="/" className={`font-semibold ${textColor} hover:text-green-500 transition`}>Home</Link>
 
             {/* Golf Courses Dropdown */}
             <div className="relative group">
