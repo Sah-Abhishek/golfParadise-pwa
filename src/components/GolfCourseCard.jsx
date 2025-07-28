@@ -36,8 +36,8 @@ const GolfCourseCard = ({ course }) => {
   return (
     <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden flex flex-col h-full border border-gray-200">
       {/* Alphabet Image Placeholder Section */}
-      <div className={`relative w-full h-48 sm:h-56 md:h-64 lg:h-48 flex items-center justify-center text-7xl font-extrabold rounded-t-2xl ${getBackgroundColorClass(course.courseName)}`}>
-        {getInitial(course.courseName)}
+      <div className={`relative w-full h-48 sm:h-56 md:h-64 lg:h-48 flex items-center justify-center text-3xl font-extrabold rounded-t-2xl ${getBackgroundColorClass(course.courseName)}`}>
+        {course.courseName}
       </div>
 
       {/* Content Section */}
@@ -68,12 +68,9 @@ const GolfCourseCard = ({ course }) => {
 
         {/* Buttons */}
         <div className="mt-auto flex justify-between items-center space-x-2">
-          <button className="flex-1 bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300 ease-in-out shadow-md text-base">
-            View Details
-          </button>
-          <button className="bg-gray-100 hover:bg-gray-200 text-gray-700 p-3 rounded-lg transition duration-300 ease-in-out shadow-sm">
-            <i className="fas fa-calendar-alt text-lg"></i> {/* Calendar icon as per design */}
-          </button>
+          {/* <button className="flex-1 bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300 ease-in-out shadow-md text-base"> */}
+          {/*   View Details */}
+          {/* </button> */}
         </div>
       </div>
     </div>

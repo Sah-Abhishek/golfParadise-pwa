@@ -141,7 +141,7 @@ const SearchBar = ({ onSearchTermChange, initialSearchTerm }) => {
       <div className="flex justify-center">
         <button
           onClick={handleSearchButtonClick}
-          className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 shadow-lg"
+          className="bg-green-500 hover:bg-green-500 text-white font-bold py-3 px-8 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 shadow-lg"
         >
           Search
         </button>

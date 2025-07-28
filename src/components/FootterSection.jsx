@@ -1,5 +1,6 @@
 import React from 'react';
 import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Youtube } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function FootterSection() {
   return (
@@ -36,9 +37,9 @@ export default function FootterSection() {
             <h3 className="text-white text-lg font-semibold">Quick Links</h3>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200 text-sm">
+                <Link to="/" className="text-gray-400 hover:text-white transition-colors duration-200 text-sm">
                   Home
-                </a>
+                </Link>
               </li>
               {/* <li> */}
               {/*   <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"> */}
@@ -46,9 +47,9 @@ export default function FootterSection() {
               {/*   </a> */}
               {/* </li> */}
               <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200 text-sm">
+                <Link to="golfcourses" className="text-gray-400 hover:text-white transition-colors duration-200 text-sm">
                   Courses
-                </a>
+                </Link>
               </li>
               <li>
                 <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200 text-sm">
@@ -75,20 +76,20 @@ export default function FootterSection() {
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-[#f4d03f] flex-shrink-0 mt-0.5" />
                 <div className="text-gray-400 text-sm">
-                  <div>123 Golf Paradise Lane</div>
-                  <div>Palm Beach, FL 33480</div>
+                  <div>13941 Clubhouse Drive #215</div>
+                  <div>Tampa FL 33618</div>
                 </div>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-[#f4d03f] flex-shrink-0" />
                 <a href="tel:8001234567" className="text-gray-400 hover:text-white transition-colors duration-200 text-sm">
-                  (800) 123-4567
+                  (813) 265-3338
                 </a>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-[#f4d03f] flex-shrink-0" />
                 <a href="mailto:info@paradisegolf.com" className="text-gray-400 hover:text-white transition-colors duration-200 text-sm">
-                  info@paradisegolf.com
+                  info@paradise-golf.com
                 </a>
               </div>
             </div>

@@ -1,3 +1,4 @@
+import FootterSection from "../components/FootterSection";
 import ImageComponent from "../components/ImageComponent";
 import NavbarRegular from "../components/NabarRegular"
 
@@ -39,7 +40,7 @@ const AboutUs = () => {
           </div>
         </div>
       </section>
-
+      <FootterSection />
     </div>
   )
 

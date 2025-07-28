@@ -155,9 +155,21 @@ const Navbar = () => {
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex items-center space-x-2">
-            <div className={`hidden md:block text-l font-medium p-3 text-white text-gray-800 bg-green-500 rounded-full`}><a href="#membership-card-component"> Buy Now</a></div>
-            {/* <div className={`hidden md:block text-l font-medium p-2 px-4 border-2 border-green-500 rounded-full ${textColor}`}>Login</div> */}
+          <div className="pt-6 flex flex-col space-y-4">
+            <div className="relative group inline-block text-left">
+              {/* Buy Now Button */}
+              <div className="text-lg font-medium p-3 text-white bg-green-500 rounded-full cursor-pointer text-center group-hover:bg-green-600 transition">
+                Buy Now
+              </div>
+
+              {/* Dropdown */}
+              <div className="absolute top-full left-0 mt-2 w-48 bg-white shadow-xl rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                <ul className="flex flex-col py-2 ">
+                  <a href='#membership-card-component' className="px-4 py-2 hover:bg-gray-100 text-gray-700 cursor-pointer">Combo Membership</a>
+                  <br /><Link to='/events/TournamentSchedulePage' className="px-4 py-2 hover:bg-gray-100 text-gray-700 cursor-pointer">Tournaments</Link>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -244,7 +256,24 @@ const Navbar = () => {
 
           {/* Mobile CTA Buttons */}
           <div className="pt-6 flex flex-col space-y-4">
-            <div className="text-l font-medium p-3 text-white bg-green-500 rounded-full cursor-pointer text-center">Buy Now</div>
+            <div className="relative group">
+              {/* Buy Now Button */}
+              <div className="text-lg font-medium p-3 text-white bg-green-500 rounded-full cursor-pointer text-center group-hover:bg-green-600 transition">
+                Buy Now
+              </div>
+
+              {/* Dropdown */}
+              <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-40 bg-white shadow-lg rounded-lg opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity duration-300 z-50">
+                <ul className="py-2">
+                  <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-gray-700">
+                    Combo Membership
+                  </li>
+                  <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-gray-700">
+                    Summer Membership
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </nav>
       </div>

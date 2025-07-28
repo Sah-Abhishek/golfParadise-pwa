@@ -106,7 +106,7 @@ const Navbar = () => {
                 </svg>
               </button>
               <div className="absolute left-0 mt-2 w-52 bg-white shadow-lg rounded-md py-2 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                <a href="/events/TournamentSchedulePage" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Upcoming Events</a>
+                <Link href="/events/TournamentSchedulePage" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Upcoming Events</Link>
                 <a href="/events/results" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Event Pairings & Results</a>
               </div>
             </div>
@@ -127,9 +127,21 @@ const Navbar = () => {
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex items-center space-x-2">
-            <div className="hidden md:block text-l font-medium p-3 text-gray-800 bg-green-500 rounded-full text-white cursor-pointer">Buy Now</div>
-            {/* <div className={`hidden md:block text-l font-medium p-2 px-4 border-2 border-green-500 rounded-full ${textColor} cursor-pointer`}>Login</div> */}
+          <div className="pt-6 flex flex-col space-y-4">
+            <div className="relative group inline-block text-left">
+              {/* Buy Now Button */}
+              <div className="text-lg font-medium p-3 text-white bg-green-500 rounded-full cursor-pointer text-center group-hover:bg-green-600 transition">
+                Buy Now
+              </div>
+
+              {/* Dropdown */}
+              <div className="absolute top-full left-0 mt-2 w-48 bg-white shadow-xl rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                <ul className="flex flex-col py-2 ">
+                  <a href='#membership-card-component' className="px-4 py-2 hover:bg-gray-100 text-gray-700 cursor-pointer">Combo Membership</a>
+                  <br /><Link to='/events/TournamentSchedulePage' className="px-4 py-2 hover:bg-gray-100 text-gray-700 cursor-pointer">Tournaments</Link>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>

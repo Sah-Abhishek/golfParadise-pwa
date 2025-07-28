@@ -50,7 +50,9 @@ const Hero = () => {
                   <span className="mr-2">
                     {/* <FaPlay /> */}
                   </span>
-                  Upcoming Tournaments
+                  <Link to='/events/TournamentSchedulePage'>
+                    Upcoming Tournaments
+                  </Link>
 
                 </button>
               </div>
