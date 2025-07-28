@@ -36,7 +36,7 @@ const Hero = () => {
                 {/* Top row: View Plans + Tee Time Booking */}
                 <div className="flex flex-col sm:flex-row gap-4">
                   <button className="bg-green-500 hover:bg-white text-black font-semibold px-12 sm:px-6 py-2 sm:py-3 rounded-full w-fit">
-                    View Plans
+                    <a href='#membership-card-component'>View Plans</a>
                   </button>
 
                   {/* Tee Time Booking as Link */}

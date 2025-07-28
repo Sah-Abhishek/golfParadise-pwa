@@ -190,10 +190,13 @@ export default function DownloadAppComponent() {
           </div>
         </div>
         {isPopupVisible && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 backdrop-blur-sm">
+            {/* Popup content */}
             <div className="bg-white p-6 rounded-lg shadow-xl w-80 md:w-96 text-center">
               <h2 className="text-xl font-semibold text-gray-800">Coming Soon!</h2>
-              <p className="mt-4 text-gray-600">We are working hard on getting the app ready for Google Play. Stay tuned!</p>
+              <p className="mt-4 text-gray-600">
+                We are working hard on getting the app ready for Google Play. Stay tuned!
+              </p>
 
               {/* Close Button */}
               <button
@@ -204,7 +207,8 @@ export default function DownloadAppComponent() {
               </button>
             </div>
           </div>
-        )}     </div>
+        )}
+      </div>
     </div>
   );
 }
