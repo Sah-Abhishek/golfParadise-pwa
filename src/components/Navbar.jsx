@@ -1,4 +1,5 @@
 import logoImage from '/logoGreen.png';
+import { Link } from 'react-router-dom'
 import logoImageWhite from '/PG-2-white(1).png'
 import React, { useState, useEffect } from 'react';
 
@@ -50,7 +51,7 @@ const Navbar = () => {
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-10 mr-10">
             <a href="#" className={`font-semibold ${textColor} hover:text-green-500 transition`}>Home</a>
-            <a href="#" className={`font-semibold ${textColor} hover:text-green-500 transition`}>Golf Courses</a>
+            <Link to="/golfcourses" className={`font-semibold ${textColor} hover:text-green-500 transition`}>Golf Courses</Link>
 
             {/* Memberships Dropdown */}
             <div className="relative group">

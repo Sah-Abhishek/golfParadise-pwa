@@ -23,7 +23,8 @@ const MembershipPlansSection = () => {
         },
         {
           name: 'Premium',
-          price: '$24.19/month billed annually',
+          price: '$24.19',
+          priceSubText: '/month billed annually',
           popular: false,
           value: false
         },
@@ -154,7 +155,7 @@ const MembershipPlansSection = () => {
               {/* Popular Badge */}
               {plan.popular && (
                 <div className="absolute -top-2 left-0 right-0 z-10">
-                  <div className="bg-yellow-500 text-white text-xs font-medium py-1 px-2 text-center">
+                  <div className="bg-yellow-500 text-white rounded-t-lg text-xs font-medium py-1 px-2 text-center">
                     Most Popular
                   </div>
                 </div>
@@ -163,14 +164,14 @@ const MembershipPlansSection = () => {
               {/* Best Value Badge */}
               {plan.value && (
                 <div className="absolute -top-2 left-0 right-0 z-10">
-                  <div className="bg-yellow-500 text-white text-xs font-medium py-1 px-2 text-center">
+                  <div className="bg-yellow-500 text-white rounded-t-lg text-xs font-medium py-1 px-2 text-center">
                     Best Value
                   </div>
                 </div>
               )}
 
               {/* Card */}
-              <div className={`border-2 bg-white ${plan.popular || plan.value ? 'pt-6' : 'pt-4'
+              <div className={` rounded-xl shadow-lg bg-white ${plan.popular || plan.value ? 'pt-6' : 'pt-4'
                 } px-4 pb-8 h-72 flex flex-col ${plan.popular ? 'border-yellow-400' : plan.value ? 'border-yellow-400' : 'border-gray-300'
                 }`}>
 
@@ -187,17 +188,31 @@ const MembershipPlansSection = () => {
 
                 {/* Price - takes up remaining space */}
                 <div className="text-center flex-grow flex flex-col justify-center">
-                  <p className="text-sm font-medium text-gray-800">{plan.price}</p>
+                  <p className="text-sm text-gray-800">
+                    <strong>
+                      {
+                        plan.price.match(/^\$\d+(\.\d{1,2})?/)?.[0]  // bold $ + number
+                      }
+                    </strong>
+                    {
+                      plan.price.replace(/^\$\d+(\.\d{1,2})?/, '') // plain rest of the string
+                    }
+                  </p>
                   {plan.altPrice && (
-                    <p className="text-sm text-gray-800 mt-1">{plan.altPrice}</p>
+                    <p className="text-sm text-gray-800 mt-1">
+                      <strong>
+                        {plan.altPrice.match(/^\$\d+(\.\d{1,2})?/)?.[0]}
+                      </strong>
+                      {plan.altPrice.replace(/^\$\d+(\.\d{1,2})?/, '')}
+                    </p>
                   )}
                 </div>
 
                 {/* Join Button - always at bottom */}
                 <div className="flex-shrink-0 mt-4 text-center">
-                  <button className="w-32 bg-red-600 text-white text-sm font-medium py-2 px-4 mx-auto block 
-                  hover:bg-red-700 transition-colors duration-200 
-                  border-b-2 border-r-2 border-red-900">
+                  <button className="w-32 bg-green-500 rounded-full text-white text-sm font-medium py-2 px-4 mx-auto block 
+                  hover:bg-green-500 transition-colors duration-200 
+                   ">
                     Join Now
                   </button>
                 </div>
