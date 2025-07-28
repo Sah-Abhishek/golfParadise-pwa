@@ -49,21 +49,24 @@ const MembershipPlansSection = () => {
         {
           name: 'Basic',
           price: '$24.19/month billed seasonally',
-          altPrice: 'Or $28.99/month billed monthly',
+          altPriceBold: '$28.99',
+          altPriceRest: '/month billed monthly',
           popular: false,
           value: false
         },
         {
           name: 'Premium',
           price: '$32.49/month billed seasonally',
-          altPrice: 'Or $38.99/month billed monthly',
+          altPriceBold: '$38.99',
+          altPriceRest: '/month billed monthly',
           popular: false,
           value: false
         },
         {
           name: 'Platinum',
           price: '$40.79/month billed seasonally',
-          altPrice: 'Or $48.99/month billed monthly',
+          altPriceBold: '$48.99',
+          altPriceRest: '/month billed monthly',
           popular: false,
           value: false
         }
@@ -82,21 +85,24 @@ const MembershipPlansSection = () => {
         {
           name: 'Basic',
           price: '$19.99/month billed seasonally',
-          altPrice: 'Or $23.99/month billed monthly',
+          altPriceBold: '$23.99',
+          altPriceRest: '/month billed monthly',
           popular: false,
           value: false
         },
         {
           name: 'Premium',
           price: '$24.19/month billed seasonally',
-          altPrice: 'Or $28.99/month billed monthly',
+          altPriceBold: '$28.99',
+          altPriceRest: '/month billed monthly',
           popular: false,
           value: false
         },
         {
           name: 'Platinum',
           price: '$32.49/month billed seasonally',
-          altPrice: 'Or $38.99/month billed monthly',
+          altPriceBold: '$38.99',
+          altPriceRest: '/month billed monthly',
           popular: false,
           value: true
         }
@@ -107,7 +113,7 @@ const MembershipPlansSection = () => {
   const currentPlan = planData[selectedPlan];
 
   return (
-    <div className="max-w-6xl mx-auto p-6 pb-20 bg-white ">
+    <div className="max-w-6xl mx-auto p-6 pb-20 bg-white">
       <div className="text-center mb-8">
         <h1 className="text-3xl font-bold text-gray-800 mb-8">Membership Plans</h1>
         <p className="text-gray-400 mb-8 text-lg max-w-3xl mx-auto">
@@ -171,48 +177,35 @@ const MembershipPlansSection = () => {
               )}
 
               {/* Card */}
-              <div className={` rounded-xl shadow-lg bg-white ${plan.popular || plan.value ? 'pt-6' : 'pt-4'
-                } px-4 pb-8 h-72 flex flex-col ${plan.popular ? 'border-yellow-400' : plan.value ? 'border-yellow-400' : 'border-gray-300'
-                }`}>
-
+              <div className={`rounded-xl shadow-lg bg-white ${plan.popular || plan.value ? 'pt-6' : 'pt-4'} px-4 pb-8 h-72 flex flex-col ${plan.popular ? 'border-yellow-400' : plan.value ? 'border-yellow-400' : 'border-gray-300'}`}>
                 {/* Plan Name */}
                 <h3 className="text-lg font-medium text-gray-800 mb-2">{plan.name}</h3>
                 <div className="text-center flex-shrink-0">
-
                   <div className="mb-4">
                     <p className="text-m font-bold text-black mb-1">{currentPlan.title}</p>
-                    <p className="text-sm text-gray-600 mb-1">{currentPlan.subTitle}</p>
+                    {currentPlan.subTitle && <p className="text-sm text-gray-600 mb-1">{currentPlan.subTitle}</p>}
                     <p className="text-sm text-gray-900">{currentPlan.period}</p>
                   </div>
                 </div>
 
-                {/* Price - takes up remaining space */}
+                {/* Price */}
                 <div className="text-center flex-grow flex flex-col justify-center">
                   <p className="text-sm text-gray-800">
                     <strong>
-                      {
-                        plan.price.match(/^\$\d+(\.\d{1,2})?/)?.[0]  // bold $ + number
-                      }
+                      {plan.price.match(/^\$\d+(\.\d{1,2})?/)?.[0]}
                     </strong>
-                    {
-                      plan.price.replace(/^\$\d+(\.\d{1,2})?/, '') // plain rest of the string
-                    }
+                    {plan.price.replace(/^\$\d+(\.\d{1,2})?/, '')}
                   </p>
-                  {plan.altPrice && (
+                  {plan.altPriceBold && plan.altPriceRest && (
                     <p className="text-sm text-gray-800 mt-1">
-                      <strong>
-                        {plan.altPrice.match(/^\$\d+(\.\d{1,2})?/)?.[0]}
-                      </strong>
-                      {plan.altPrice.replace(/^\$\d+(\.\d{1,2})?/, '')}
+                      Or <strong>{plan.altPriceBold}</strong>{plan.altPriceRest}
                     </p>
                   )}
                 </div>
 
-                {/* Join Button - always at bottom */}
+                {/* Join Button */}
                 <div className="flex-shrink-0 mt-4 text-center">
-                  <button className="w-32 bg-green-500 rounded-full text-white text-sm font-medium py-2 px-4 mx-auto block 
-                  hover:bg-green-500 transition-colors duration-200 
-                   ">
+                  <button className="w-32 bg-green-500 rounded-full text-white text-sm font-medium py-2 px-4 mx-auto block hover:bg-green-500 transition-colors duration-200">
                     Join Now
                   </button>
                 </div>

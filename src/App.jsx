@@ -2,6 +2,8 @@ import './App.css'
 import GolfCourses from './components/GolfCourses'
 import { Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
+import AboutUs from './pages/AboutUs'
+import ContactUs from './pages/ContactUs'
 
 function App() {
 
@@ -10,6 +12,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/golfcourses" element={<GolfCourses />} />
+        <Route path="/aboutus" element={<AboutUs />} />
+        <Route path="/contactus" element={<ContactUs />} />
       </Routes>
     </>
   )
