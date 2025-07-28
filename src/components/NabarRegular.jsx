@@ -137,8 +137,8 @@ const Navbar = () => {
               {/* Dropdown */}
               <div className="absolute top-full left-0 mt-2 w-48 bg-white shadow-xl rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                 <ul className="flex flex-col py-2 ">
-                  <a href='#membership-card-component' className="px-4 py-2 hover:bg-gray-100 text-gray-700 cursor-pointer">Combo Membership</a>
-                  <br /><Link to='/events/TournamentSchedulePage' className="px-4 py-2 hover:bg-gray-100 text-gray-700 cursor-pointer">Tournaments</Link>
+                  {/* <a href='#membership-card-component' className="px-4 py-2 hover:bg-gray-100 text-gray-700 cursor-pointer">Combo Membership</a> */}
+                  <Link to='/events/TournamentSchedulePage' className="px-4 py-2 hover:bg-gray-100 text-gray-700 cursor-pointer">Tournaments</Link>
                 </ul>
               </div>
             </div>
