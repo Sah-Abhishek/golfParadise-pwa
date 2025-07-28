@@ -150,7 +150,7 @@ const MembershipPlansSection = () => {
 
       {/* Plan Cards Row */}
       <div className="transition-all  duration-500 ease-in-out">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 scale-120 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4  gap-6">
           {currentPlan.plans.map((plan, index) => (
             <div key={`${selectedPlan}-${index}`} className="relative">
               {/* Popular Badge */}

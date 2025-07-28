@@ -4,6 +4,8 @@ import { Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
 import AboutUs from './pages/AboutUs'
 import ContactUs from './pages/ContactUs'
+import TournamentSchedulePage from './pages/TournamentSchedulePage'
+import EventsPage from './components/EventsPage'
 
 function App() {
 
@@ -14,6 +16,9 @@ function App() {
         <Route path="/golfcourses" element={<GolfCourses />} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/contactus" element={<ContactUs />} />
+        <Route path="/events/TournamentSchedulePage" element={<TournamentSchedulePage />} />
+        <Route path="/events/results" element={<EventsPage />} />
+
       </Routes>
     </>
   )

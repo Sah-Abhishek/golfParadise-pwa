@@ -147,7 +147,7 @@ export default function CouponsDeals() {
   return (
     <div className="px-4 py-10 w-full bg-white overflow-x-hidden">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-black text-center mb-10 mt-2">
+        <h2 className="text-3xl md:text-4xl font-bold text-black text-center mb-10 mt-5">
           Exclusive Deals
         </h2>
         <div className="flex flex-col md:flex-row md:flex-wrap justify-center gap-6">

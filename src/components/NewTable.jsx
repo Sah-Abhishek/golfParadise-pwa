@@ -167,11 +167,11 @@ const TogglePlans = () => {
           </tbody>
         </table>
 
-        <div className="flex mt-10 justify-center">
-          <button className="bg-yellow-500 hover:bg-yellow-600 text-gray-800 font-semibold px-8 mb-10 py-3 rounded-full sm:text-lg text-xs transition-colors duration-200">
-            Explore Membership Plans
-          </button>
-        </div>
+        {/* <div className="flex mt-10 justify-center"> */}
+        {/*   <button className="bg-yellow-500 hover:bg-yellow-600 text-gray-800 font-semibold px-8 mb-10 py-3 rounded-full sm:text-lg text-xs transition-colors duration-200"> */}
+        {/*     Explore Membership Plans */}
+        {/*   </button> */}
+        {/* </div> */}
       </div>
     </div>
   );

@@ -60,7 +60,7 @@ export default function DownloadAppComponent() {
         <div
           onClick={handlePopupToggle}
 
-          className="w-full flex flex-col sm:flex-row gap-4 sm:gap-[20px] w-full max-w-md">
+          className=" flex flex-col sm:flex-row gap-4 sm:gap-[20px] w-full max-w-md">
           {/* App Store Button */}
           <button className="bg-black rounded-[8px] py-3 px-5 flex items-center gap-3 hover:bg-gray-900 transition-all duration-200 w-full sm:w-auto">
             {/* Apple Icon */}

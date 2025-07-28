@@ -133,9 +133,9 @@ const Navbar = () => {
                 </svg>
               </button>
               <div className="absolute left-0 mt-2 w-52 bg-white shadow-lg rounded-md py-2 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                <a href="/events/upcoming" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Upcoming Events</a>
+                <a href="/events/TournamentSchedulePage" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Upcoming Events</a>
                 {/* <a href="/events/tournaments" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Tournaments</a> */}
-                <a href="/events/past" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Event Pairings & Results</a>
+                <a href="/events/results" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Event Pairings & Results</a>
               </div>
             </div>
 
@@ -165,73 +165,87 @@ const Navbar = () => {
       {/* Mobile Menu */}
       <div className={`fixed top-0 left-0 h-full w-4/5 bg-white shadow-lg z-50 md:hidden transform transition-transform duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
         <nav className="flex flex-col p-6 space-y-4">
-          <Link to="/" className="text-black font-semibold text-lg" onClick={() => setIsOpen(false)}>Home</Link>
+          <a href="#" className="text-black font-semibold text-lg" onClick={() => setIsOpen(false)}>Home</a>
+
           {/* Mobile Golf Courses Dropdown */}
-          <button onClick={() => setMobileGolfCoursesOpen(!mobileGolfCoursesOpen)} className="text-black font-semibold text-lg flex items-center justify-between">
+          <button onClick={() => setMobileGolfCoursesOpen(!mobileGolfCoursesOpen)} className="flex justify-between items-center font-semibold text-black text-lg">
             Golf Courses
-            <svg className={`h-4 w-4 transform transition-transform ${mobileGolfCoursesOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+            <svg className={`h-5 w-5 transition-transform ${mobileGolfCoursesOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
               <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
             </svg>
           </button>
           {mobileGolfCoursesOpen && (
-            <div className="pl-4 space-y-2 text-sm">
-              <Link to="/golfcourses" className="block text-gray-700" onClick={() => setIsOpen(false)}>All Golf Courses</Link>
+            <div className="ml-4 flex flex-col space-y-2">
+              <Link to="/golfcourses" onClick={() => setIsOpen(false)} className="text-gray-700">All Golf Courses</Link>
 
-              {/* Nested Dropdown: Courses Rate Sheet */}
-              <button onClick={() => setMobileRateSheetOpen(!mobileRateSheetOpen)} className="w-full text-left text-gray-700 flex items-center justify-between">
+              <button onClick={() => setMobileRateSheetOpen(!mobileRateSheetOpen)} className="flex justify-between items-center font-semibold text-gray-700">
                 Courses Rate Sheet
-                <svg className={`h-4 w-4 transform transition-transform ${mobileRateSheetOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                <svg className={`h-5 w-5 transition-transform ${mobileRateSheetOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
               {mobileRateSheetOpen && (
-                <div className="pl-4 space-y-2">
-                  <a href="https://www.paradisegolfcard.com/pages/summer-2025-participating-clubs" className="block text-gray-700" onClick={() => setIsOpen(false)}>Summer 2025 Member Guide & Rate Sheet</a>
-                  <a href="https://www.paradisegolfcard.com/pages/winter-24-25-member-guide-rate-sheet" className="block text-gray-700" onClick={() => setIsOpen(false)}>Winter 24/25 Member Guide & Rate Sheet</a>
-                  <a href="https://www.paradisegolfcard.com/pages/winter-clubs-location" className="block text-gray-700" onClick={() => setIsOpen(false)}>Winter Clubs & Locations</a>
-                  <a href="https://www.paradisegolfcard.com/pages/participating-winter-clubs-24-25" className="block text-gray-700" onClick={() => setIsOpen(false)}>Participating Winter Clubs</a>
-                  <a href="https://www.paradisegolfcard.com/pages/member-rules-regulations" className="block text-gray-700" onClick={() => setIsOpen(false)}>Member Rules & Regulations</a>
+                <div className="ml-4 flex flex-col space-y-1">
+                  <a href="https://www.paradisegolfcard.com/pages/summer-2025-participating-clubs" className="text-gray-600" target="_blank" rel="noopener noreferrer">Summer 2025 Member Guide & Rate Sheet</a>
+                  <a href="https://www.paradisegolfcard.com/pages/winter-24-25-member-guide-rate-sheet" className="text-gray-600" target="_blank" rel="noopener noreferrer">Winter 24/25 Member Guide & Rate Sheet</a>
+                  <a href="https://www.paradisegolfcard.com/pages/winter-clubs-location" className="text-gray-600" target="_blank" rel="noopener noreferrer">Winter Clubs & Locations</a>
+                  <a href="https://www.paradisegolfcard.com/pages/participating-winter-clubs-24-25" className="text-gray-600" target="_blank" rel="noopener noreferrer">Participating Winter Clubs</a>
+                  <a href="https://www.paradisegolfcard.com/pages/member-rules-regulations" className="text-gray-600" target="_blank" rel="noopener noreferrer">Member Rules & Regulations</a>
                 </div>
               )}
             </div>
           )}
 
           {/* Mobile Memberships Dropdown */}
-          <button onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)} className="text-black font-semibold text-lg flex items-center justify-between">
+          <button onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)} className="flex justify-between items-center font-semibold text-black text-lg">
             Memberships
-            <svg className={`h-4 w-4 transform transition-transform ${mobileDropdownOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+            <svg className={`h-5 w-5 transition-transform ${mobileDropdownOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
               <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
             </svg>
           </button>
           {mobileDropdownOpen && (
-            <div className="pl-4 space-y-2 text-sm">
-              <a href="https://www.paradisegolfcard.com/products/summer-winter-annual-combo-card-valid-apr-1-oct-31-2025" className="block text-gray-700" onClick={() => setIsOpen(false)}>Annual Combo Membership</a>
-              <a href="https://www.paradisegolfcard.com/products/summer-2025-paradise-golf-membership-198-total" className="block text-gray-700" onClick={() => setIsOpen(false)}>Summer Membership</a>
-              <a href="https://www.paradisegolfcard.com/products/early-renewal-special-winter-25-26-membership-105-total" className="block text-gray-700" onClick={() => setIsOpen(false)}>Winter Membership</a>
+            <div className="ml-4 flex flex-col space-y-2">
+              <a href="https://www.paradisegolfcard.com/products/summer-winter-annual-combo-card-valid-apr-1-oct-31-2025" className="text-gray-700" target="_blank" rel="noopener noreferrer">Annual Combo Membership</a>
+              <a href="https://www.paradisegolfcard.com/products/summer-2025-paradise-golf-membership-198-total" className="text-gray-700" target="_blank" rel="noopener noreferrer">Summer Membership</a>
+              <a href="https://www.paradisegolfcard.com/products/early-renewal-special-winter-25-26-membership-105-total" className="text-gray-700" target="_blank" rel="noopener noreferrer">Winter Membership</a>
             </div>
           )}
 
-          {/* Mobile Tee Times Dropdown */}
-          <Link to='https://www.paradiseteetimes.com/' className="text-black font-semibold text-lg flex items-center justify-between">
-            Tee Times
-          </Link>
+          {/* Mobile Tee Times */}
+          <a href="https://www.paradiseteetimes.com/" className="text-black font-semibold text-lg" target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)}>Tee Times</a>
 
           {/* Mobile Events Dropdown */}
-          <button onClick={() => setMobileEventsOpen(!mobileEventsOpen)} className="text-black font-semibold text-lg flex items-center justify-between">
+          <button onClick={() => setMobileEventsOpen(!mobileEventsOpen)} className="flex justify-between items-center font-semibold text-black text-lg">
             Events
-            <svg className={`h-4 w-4 transform transition-transform ${mobileEventsOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+            <svg className={`h-5 w-5 transition-transform ${mobileEventsOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
               <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
             </svg>
           </button>
           {mobileEventsOpen && (
-            <div className="pl-4 space-y-2 text-sm">
-              <a href="/events/upcoming" className="block text-gray-700" onClick={() => setIsOpen(false)}>Upcoming Events</a>
-              <a href="/events/tournaments" className="block text-gray-700" onClick={() => setIsOpen(false)}>Tournaments</a>
-              <a href="/events/past" className="block text-gray-700" onClick={() => setIsOpen(false)}>Past Events</a>
+            <div className="ml-4 flex flex-col space-y-2">
+              <a href="/events/upcoming" className="text-gray-700" onClick={() => setIsOpen(false)}>Upcoming Events</a>
+              <a href="/events/past" className="text-gray-700" onClick={() => setIsOpen(false)}>Event Pairings & Results</a>
             </div>
           )}
 
-          <a href="#" className="text-black font-semibold text-lg" onClick={() => setIsOpen(false)}>Contact</a>
+          {/* Mobile Contact Dropdown */}
+          <button onClick={() => setMobileTeeTimesOpen(!mobileTeeTimesOpen)} className="flex justify-between items-center font-semibold text-black text-lg">
+            Contact
+            <svg className={`h-5 w-5 transition-transform ${mobileTeeTimesOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          {mobileTeeTimesOpen && (
+            <div className="ml-4 flex flex-col space-y-2">
+              <a href="/aboutus" className="text-gray-700" onClick={() => setIsOpen(false)}>About Us</a>
+              <a href="/contactus" className="text-gray-700" onClick={() => setIsOpen(false)}>Contact Us</a>
+            </div>
+          )}
+
+          {/* Mobile CTA Buttons */}
+          <div className="pt-6 flex flex-col space-y-4">
+            <div className="text-l font-medium p-3 text-white bg-green-500 rounded-full cursor-pointer text-center">Buy Now</div>
+          </div>
         </nav>
       </div>
     </nav >

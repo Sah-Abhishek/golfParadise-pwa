@@ -106,8 +106,8 @@ const Navbar = () => {
                 </svg>
               </button>
               <div className="absolute left-0 mt-2 w-52 bg-white shadow-lg rounded-md py-2 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                <a href="/events/upcoming" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Upcoming Events</a>
-                <a href="/events/past" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Event Pairings & Results</a>
+                <a href="/events/TournamentSchedulePage" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Upcoming Events</a>
+                <a href="/events/results" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Event Pairings & Results</a>
               </div>
             </div>
 
@@ -136,6 +136,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <div className={`fixed top-0 left-0 h-full w-4/5 bg-white shadow-lg z-50 md:hidden transform transition-transform duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+
         <nav className="flex flex-col p-6 space-y-4">
           <a href="#" className="text-black font-semibold text-lg" onClick={() => setIsOpen(false)}>Home</a>
 
@@ -216,8 +217,7 @@ const Navbar = () => {
 
           {/* Mobile CTA Buttons */}
           <div className="pt-6 flex flex-col space-y-4">
-            <div className="text-l font-medium p-3 text-white bg-green-500 rounded-full cursor-pointer text-center">Join Now</div>
-            <div className="text-l font-medium p-2 px-4 border-2 border-green-500 rounded-full text-gray-900 cursor-pointer text-center">Login</div>
+            <div className="text-l font-medium p-3 text-white bg-green-500 rounded-full cursor-pointer text-center">Buy Now</div>
           </div>
         </nav>
       </div>
