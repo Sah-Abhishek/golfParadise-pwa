@@ -1,49 +1,53 @@
 import FootterSection from "../components/FootterSection";
 import ImageComponent from "../components/ImageComponent";
-import NavbarRegular from "../components/NabarRegular"
+import NavbarRegular from "../components/NabarRegular";
 
 const AboutUs = () => {
-
   return (
-    <div>
+    <div className="bg-white text-gray-800">
       <NavbarRegular />
       <ImageComponent />
 
-      <section className="bg-gray-100 py-16 px-4 md:px-8 font-inter">
-        <div className="max-w-5xl mx-auto">
-          <div className="bg-white shadow-xl rounded-2xl p-8 md:p-12">
-            <h1 className="text-4xl md:text-5xl font-extrabold text-green-600 mb-4 text-center">
-              About Paradise Golf
-            </h1>
-            <p className="text-lg text-center text-gray-500 italic mb-8">
-              “Your Gateway to the Ultimate Golf Experience”
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-white rounded-3xl p-6 sm:p-10 md:p-16 transition-all">
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-green-700 mb-4 text-center leading-tight">
+            About Paradise Golf
+          </h1>
+          <p className="text-xl text-center text-gray-500 italic mb-10">
+            “Your Gateway to the Ultimate Golf Experience”
+          </p>
+
+          <div className="space-y-8 text-lg text-gray-700 leading-relaxed tracking-wide">
+            <p className="text-justify">
+              <span className="font-semibold text-green-700">Paradise Golf</span> is a <span className="font-semibold">subscription-based membership</span> and <span className="font-semibold">AI-powered access platform</span> offering golfers discounted play at a curated network of public, semi-private, and premium golf courses. Acting as both an <span className="font-semibold">aggregator</span> and <span className="font-semibold">loyalty club</span>, Paradise Golf provides members with exclusive pricing, complimentary rounds, tournaments, leagues, and unique social golf experiences. We collaborate directly with partner golf courses to increase visibility, revenue, and utilization through customized marketing support.
             </p>
 
-            <div className="space-y-6 text-gray-700 text-lg leading-relaxed">
-              <p>
-                Paradise Golf is a <span className="font-bold">subscription-based</span>subscription-based membership organization and <span className="font-bold">AI powered access platform</span> that provides golfers with discounted access to a curated network of public, semi-private, and premium golf courses. The company functions as an <span className="font-bold">aggregator and loyalty-based membership club</span>, enabling members to enjoy exclusive pricing, complimentary rounds, tournaments, leagues and social golf experiences. Paradise Golf partners directly with golf clubs to deliver tailored marketing and promotional support to drive increased revenue, visibility and utilization at each facility.
-              </p>
+            <div className="flex flex-col md:flex-row md:space-x-8 space-y-6 md:space-y-0">
+              <div className="bg-white text-justify rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow duration-300 flex-1">
+                <h2 className="text-2xl font-bold text-center mb-3">
+                  B2C Subscription + B2B Partnerships
+                </h2>
+                <p>
+                  Our business model blends a <span className="font-semibold">B2C subscription service</span> with <span className="font-semibold">B2B partnerships</span>. Members pay a recurring fee to unlock benefits across the network, while partner courses gain strategic exposure and increased bookings. Our centralized mobile platform simplifies tee time reservations, tracks loyalty, and delivers <span className="font-semibold">personalized offers</span> to each member.
+                </p>
+              </div>
 
-              <p>
-                Paradise Golf’s core business model is a <span className="font-bold">B2C subscription membership combined with B2B partnerships</span> with golf courses. Members pay a recurring fee for access to benefits across the course network, and the company leverages strategic relationships with courses to deliver value to both players and facilities. Technology is used to streamline tee time booking, loyalty tracking, and personalized offers through a centralized mobile platform.
-              </p>
-
-              <p>
-
-
-                Paradise Golf continues to expand its technology capabilities to deliver a seamless digital booking and membership experience, enabling scalable growth across new regions. Additional partnerships include premium-tier memberships, integration with practice facilities, and enhanced data-driven personalization for members and partners.
-
-
-              </p>
-
+              <div className="bg-white text-justify rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow duration-300 flex-1">
+                <h2 className="text-2xl font-bold text-center mb-3">
+                  Investing in the Future of Membership
+                </h2>
+                <p>
+                  As Paradise Golf continues to grow, we are investing in cutting-edge technology to create a seamless digital membership experience. Expansion plans include premium-tier offerings, integration with top-tier practice facilities, and enhanced <span className="font-semibold">data-driven personalization</span> — all designed to elevate the value for members and partners alike.
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+
       <FootterSection />
     </div>
-  )
-
-}
+  );
+};
 
 export default AboutUs;

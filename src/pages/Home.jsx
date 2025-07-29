@@ -10,8 +10,20 @@ import FootterSection from '../components/FootterSection'
 import MembershipPlansSection from '../components/MembershipsPlansSection'
 import NewTable from '../components/NewTable'
 import MembershipPlansCardComponent from '../components/MembershipPlansCardComponent'
+import { useLocation } from 'react-router-dom'
+import { useEffect } from 'react'
 
 function App() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.querySelector(location.hash);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [location]);
 
   return (
     <>

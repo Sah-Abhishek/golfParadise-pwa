@@ -11,6 +11,12 @@ const Navbar = () => {
   const [mobileEventsOpen, setMobileEventsOpen] = useState(false);
   const [mobileGolfCoursesOpen, setMobileGolfCoursesOpen] = useState(false);
   const [mobileRateSheetOpen, setMobileRateSheetOpen] = useState(false);
+  const currentPage = 'Home';
+  const [isBuyNowDropdownOpen, setIsBuyNowDropdownOpen] = useState(false);
+
+  const toggleBuyNowDropdown = () => {
+    setIsBuyNowDropdownOpen(prev => !prev);
+  };
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -23,19 +29,19 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const textColor = isScrolled ? 'text-black' : 'text-white';
+  const textColor = isScrolled ? 'text-[#006838]' : 'text-white';
 
   return (
     <nav className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${isScrolled ? 'bg-white shadow-md' : 'bg-transparent'}`}>
       <div className="sm:mt-4 rounded-full max-w-7xl mx-auto px-4 sm:py-4 sm:px-6 lg:px-8 transition-all duration-300">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex flex-row gap-x-2">
-            <Link to="/">
-              <img src={isScrolled ? logoImage : logoImageWhite} alt="Paradise Golf Logo" className="h-10 sm:h-12 w-auto" />
-              {/* <div className={`text-2xl font-bold ${textColor}`}> */}
-              {/*   Paradise <span className={`ml-2 ${isScrolled ? 'text-red-500' : 'text-red-400'}`}>Golf</span> */}
-              {/* </div> */}
+          <div className="flex flex-col gap-x-2">
+            <Link to="/" className='flex gap-x-3'>
+              <img src={isScrolled ? logoImage : logoImageWhite} alt="Paradise Golf Logo" className="sm:h-10 mb-5 h-6  mt-4 sm:h-9 w-auto" />
+              <div className={`text-xl sm:text-2xl mt-5 font-bold mt-3   ${textColor}`}>
+                Paradise<span className={`ml-2 ${isScrolled ? 'text-[#006838]' : 'text-white'}`}>Golf</span>
+              </div>
             </Link>
           </div>
 
@@ -54,7 +60,7 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-10 mr-10">
-            <a href="#" className={`font-semibold ${textColor} hover:text-green-500 transition`}>Home</a>
+            <a href="#" className={`font-semibold ${textColor}  hover:text-green-500 transition`}>Home</a>
             <div className="relative group">
               <button className={`font-semibold flex items-center gap-1 ${textColor} hover:text-green-500 transition`}>
                 Golf Courses
@@ -65,13 +71,13 @@ const Navbar = () => {
 
               {/* Primary Dropdown */}
               <div className="absolute left-0 mt-2 w-52 bg-white shadow-lg rounded-md py-2 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                <Link
-                  to="/golfcourses"
-                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                >
-                  All Golf Courses
-                </Link>
-
+                {/* <Link */}
+                {/*   to="/golfcourses" */}
+                {/*   className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" */}
+                {/* > */}
+                {/*   All Golf Courses */}
+                {/* </Link> */}
+                {/**/}
                 {/* Nested Dropdown Wrapper */}
                 <div className="relative group/nested">
                   <button className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex justify-between items-center">
@@ -155,18 +161,22 @@ const Navbar = () => {
           </div>
 
           {/* CTA Buttons */}
-          <div className="pt-6 flex flex-col space-y-4">
+          <div className=" flex flex-col space-y-4">
             <div className="relative group inline-block text-left">
               {/* Buy Now Button */}
-              <div className="text-lg font-medium p-3 text-white bg-green-500 rounded-full cursor-pointer text-center group-hover:bg-green-600 transition">
+              <div
+                className={`hidden sm:block text-lg font-medium px-5 py-3 rounded-full text-center cursor-pointer transition 
+    ${isScrolled ? 'bg-white border border-[#006838] text-[#006838] hover:bg-[#e6f4ec]' : 'bg-[#006838] text-white hover:bg-white hover:text-[#006838]'}
+  `}
+              >
                 Buy Now
               </div>
 
               {/* Dropdown */}
               <div className="absolute top-full left-0 mt-2 w-48 bg-white shadow-xl rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                 <ul className="flex flex-col py-2 ">
-                  <a href='#membership-card-component' className="px-4 py-2 hover:bg-gray-100 text-gray-700 cursor-pointer">Combo Membership</a>
-                  <br /><Link to='/events/TournamentSchedulePage' className="px-4 py-2 hover:bg-gray-100 text-gray-700 cursor-pointer">Tournaments</Link>
+                  <a href='#membership-card-component' className="px-4  hover:bg-gray-100 text-gray-700 cursor-pointer">Combo Membership</a>
+                  <Link to='/events/TournamentSchedulePage' className="px-4 py-2 hover:bg-gray-100 text-gray-700 cursor-pointer">Tournaments</Link>
                 </ul>
               </div>
             </div>
@@ -188,7 +198,7 @@ const Navbar = () => {
           </button>
           {mobileGolfCoursesOpen && (
             <div className="ml-4 flex flex-col space-y-2">
-              <Link to="/golfcourses" onClick={() => setIsOpen(false)} className="text-gray-700">All Golf Courses</Link>
+              {/* <Link to="/golfcourses" onClick={() => setIsOpen(false)} className="text-gray-700">All Golf Courses</Link> */}
 
               <button onClick={() => setMobileRateSheetOpen(!mobileRateSheetOpen)} className="flex justify-between items-center font-semibold text-gray-700">
                 Courses Rate Sheet
@@ -235,7 +245,7 @@ const Navbar = () => {
           </button>
           {mobileEventsOpen && (
             <div className="ml-4 flex flex-col space-y-2">
-              <a href="/events/upcoming" className="text-gray-700" onClick={() => setIsOpen(false)}>Upcoming Events</a>
+              <Link to="/events/TournamentSchedulePage" className="text-gray-700" onClick={() => setIsOpen(false)}>Upcoming Events</Link>
               <a href="/events/past" className="text-gray-700" onClick={() => setIsOpen(false)}>Event Pairings & Results</a>
             </div>
           )}
@@ -255,28 +265,33 @@ const Navbar = () => {
           )}
 
           {/* Mobile CTA Buttons */}
-          <div className="pt-6 flex flex-col space-y-4">
-            <div className="relative group">
-              {/* Buy Now Button */}
-              <div className="text-lg font-medium p-3 text-white bg-green-500 rounded-full cursor-pointer text-center group-hover:bg-green-600 transition">
-                Buy Now
-              </div>
+          <div className="pt-6 flex flex-col space-y-4 relative">
+            {/* Buy Now Button */}
+            <button
+              onClick={toggleBuyNowDropdown}
+              className="text-lg font-medium p-3 text-white bg-[#006838] rounded-full cursor-pointer text-center hover:bg-green-600 transition"
+            >
+              Buy Now
+            </button>
 
-              {/* Dropdown */}
-              <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-40 bg-white shadow-lg rounded-lg opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity duration-300 z-50">
+            {/* Dropdown */}
+            {isBuyNowDropdownOpen && (
+              <div className="absolute top-full left-0 mt-2 w-40 bg-white shadow-lg rounded-lg z-50">
                 <ul className="py-2">
-                  <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-gray-700">
-                    Combo Membership
+                  <li>
+                    <a href='#membership-card-component' onClick={toggleMenu} className="px-4 py-2 hover:bg-gray-100 text-sm cursor-pointer text-gray-700">
+                      Combo Membership
+                    </a>
                   </li>
-                  <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-gray-700">
-                    Summer Membership
-                  </li>
+                  <Link to='events/TournamentSchedulePage' className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-gray-700 text-sm">
+                    Tournaments
+                  </Link>
                 </ul>
               </div>
-            </div>
+            )}
           </div>
         </nav>
-      </div>
+      </div >
     </nav >
   );
 };
