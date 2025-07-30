@@ -1,93 +1,35 @@
 import React from "react";
 
-const images = [
-  "https://plus.unsplash.com/premium_photo-1679505064703-e7a080939fcc?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://images.unsplash.com/photo-1605144884374-ecbb643615f6?q=80&w=692&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://images.unsplash.com/photo-1443706340763-4b60757a36ce?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://images.unsplash.com/photo-1543105177-748ceda71741?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://images.unsplash.com/photo-1592937238247-cd0090e02f65?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "http://plus.unsplash.com/premium_photo-1678415262915-e50f254ebb3d?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://images.unsplash.com/photo-1623567341691-1f47b5cf949e?q=80&w=1476&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-];
-
-export default function Gallery() {
-  const getGridClasses = (index) => {
-    const layouts = [
-      "col-span-3 row-span-2", // Large left (6 cells)
-      "col-span-2 row-span-1", // Top middle (2 cells) 
-      "col-span-1 row-span-2", // Tall right (2 cells)
-      "col-span-2 row-span-1", // Second row middle (2 cells)
-      "col-span-3 row-span-2", // Large bottom left (6 cells)
-      "col-span-3 row-span-1", // Bottom right span (3 cells)
-      "col-span-3 row-span-1", // Bottom right span (3 cells)
-    ];
-    return layouts[index] || "col-span-1 row-span-1";
-  };
+const GolfCourseGallery = () => {
+  const images = [
+    "https://centralus1-mediap.svc.ms/transform/thumbnail?provider=spo&farmid=194056&inputFormat=jpg&cs=fFNQTw&docid=https%3A%2F%2Fmy.microsoftpersonalcontent.com%2F_api%2Fv2.0%2Fdrives%2Fb!gqtMT79quEyMW33Y6ezekc6-xBUzGexDjcR9HzbUF_lJ1BL09Z-1SZgT2b5WgK3R%2Fitems%2F01KZUYRQUWRQA7IJDL7RDYUOEKLJRRBZIE%3Ftempauth%3Dv1e.eyJzaXRlaWQiOiI0ZjRjYWI4Mi02YWJmLTRjYjgtOGM1Yi03ZGQ4ZTllY2RlOTEiLCJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvbXkubWljcm9zb2Z0cGVyc29uYWxjb250ZW50LmNvbUA5MTg4MDQwZC02YzY3LTRjNWItYjExMi0zNmEzMDRiNjZkYWQiLCJleHAiOiIxNzUzODc2ODAwIn0.NEApejiLovnh34WJyk_NMLoxj5T7xNQ1WgjA3WraXwgoKoJW7VGFOAutLQdXG_glg4zAt_kgzxRuv82WYgusLMjSVHDzay0IH_6rDD4VGkgAZqRmmw3q9jRLCAWeJAbfxdf_r16-23Oozc3ZtkwRNg9JXA7-fDQlFKgxdUbt04v8AuuBmz4Bxt7DV9ABFtcGIUIiIu-sOSysQbLVhfifx5209nZHb6__QKJlylChM5ukptlu6OsZcqFKhVX3FvSTuU_hX2vUC4otITzlopq3XaeMQFtJ-HbeWKwde2eY1UTXU7ijYiAcOjN9P6TsTnh6YX0uywIdXd7rLhNEtz1dOPCiTpkRUcSYG-75uH9SsL5TBEMEpetSGTBGO0M4oEJIKwBeBoekftqAuiccqbZvI1hjGhP3XYMKFPB_ZSl2k035Inu4em9tPqu6dS9d370adih-o3Y3IoRGiDeMF-0UJVfJhdOpNvraNX1No1hOG_k.mfpo19vRzlzEthwtkUFkgzyCf2fuggFkaB35A0QwIKg%26version%3DPublished&cb=63889391045&encodeFailures=1&width=1200&height=893", // green grass with mountains
+    "https://centralus1-mediap.svc.ms/transform/thumbnail?provider=spo&farmid=194056&inputFormat=jpg&cs=fFNQTw&docid=https%3A%2F%2Fmy.microsoftpersonalcontent.com%2F_api%2Fv2.0%2Fdrives%2Fb!gqtMT79quEyMW33Y6ezekc6-xBUzGexDjcR9HzbUF_lJ1BL09Z-1SZgT2b5WgK3R%2Fitems%2F01KZUYRQVGNGAGYN4IU5G3PG2EO44OCV5E%3Ftempauth%3Dv1e.eyJzaXRlaWQiOiI0ZjRjYWI4Mi02YWJmLTRjYjgtOGM1Yi03ZGQ4ZTllY2RlOTEiLCJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvbXkubWljcm9zb2Z0cGVyc29uYWxjb250ZW50LmNvbUA5MTg4MDQwZC02YzY3LTRjNWItYjExMi0zNmEzMDRiNjZkYWQiLCJleHAiOiIxNzUzODc2ODAwIn0.xfJYQCmuxlt6XLAlV-0usojA5Hy-XnSCzN7r-1EIR5cTt4aUEOxq2gZ7YF4F2OxyzmWHoptl2D7kr32pjfTOOZYCmARuidp1283i71SFU5l6MdnSAJg4dQ1rDi7eJT79XiXe9-7AoY9MG4AoLRuRb1tyMel2OT_EgS6khW71gD5HqGl5XyXTJpIFOuCnuaaDMdMnu3_m2ONShApQ7CmZv3OxAWpTHkHZW1UsyMmOSTLbe48Q64w4CJ2git3r9UQZkQQ24eQOru3L9qcbkA6uA8lZQFi2E7jxS4aOFq7xKyedBv4q8UPDpGz2QmOGweCf_g8k36S0Bf3x6kIGdc4yCN7Nx7_DICCxRBsPmIe5aXQDVInWLCDVDSrB0EFwAKA9ctMyYfp720fHpNn9KXn0j9pkZSaK-RNUvvlNyDaLEyO4g3rEOx5b0UBSbJGfiU6pSE5q8Phx2CvW0AcVt8MS_enUw4U5nHIwuRz5EKoZY0c.i2q7kYlF0AwM2UG4pgPC7aeB74VJuOuhkYuMw7GKJPI%26version%3DPublished&cb=63889391042&encodeFailures=1&width=458&height=314", // golf balls on green mat
+    "https://centralus1-mediap.svc.ms/transform/thumbnail?provider=spo&farmid=194056&inputFormat=jpg&cs=fFNQTw&docid=https%3A%2F%2Fmy.microsoftpersonalcontent.com%2F_api%2Fv2.0%2Fdrives%2Fb!gqtMT79quEyMW33Y6ezekc6-xBUzGexDjcR9HzbUF_lJ1BL09Z-1SZgT2b5WgK3R%2Fitems%2F01KZUYRQRFU3MI5APWGRCZCX4HNDNCLI3P%3Ftempauth%3Dv1e.eyJzaXRlaWQiOiI0ZjRjYWI4Mi02YWJmLTRjYjgtOGM1Yi03ZGQ4ZTllY2RlOTEiLCJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvbXkubWljcm9zb2Z0cGVyc29uYWxjb250ZW50LmNvbUA5MTg4MDQwZC02YzY3LTRjNWItYjExMi0zNmEzMDRiNjZkYWQiLCJleHAiOiIxNzUzODc2ODAwIn0.wf-BSbaKmiYmWdRVC7lb468o_PVX-_6jeTz-akEE6j1QnSqJHHQlhEj9-PZ-Qt80vV3HHxkHPn51KtFIvfjvXYOGav_Gb3qyn1itygXFrIsxj6W--NVxh_WMliPAjUvSDO2jS2NAXR4SzqH50CNmrXXT5GQXG-Dp7qKZr2iAcuPrvfD5taJf2ZQGSfq4wTPg3ECI89a-2sofGYnNK2yKA4UZvC2FnqVYGh9GoqpUliCh-8nTOW2nJWup-PWEE7sylAu0KzQ76N6VObfCJNY6m_1hRI8V4azCZmVe3CgeHh8iI0jEef6YV_TgtanrYUnAGrsqOHi4joMfFnWEhGq3_q5hqMLvTL887bIem08lYCyQqDyk61EINxfaATuOXiWfe9_-XYTsEqRMQYg6FRXh7VNjbaybVD-LCgqfCo2pGCP4LbP7BBFfSAh11KAeuGaL-ZVPWrSPuCo_b5ZomjfhWFCI29rX462jwvVvEtqy_rk.CzlN9ryk1lRcBlTMgl9uaGR_dm432So6JVMzYECTE2E%26version%3DPublished&cb=63889391043&encodeFailures=1&width=580&height=435", // golf course with water and sunset
+    "https://centralus1-mediap.svc.ms/transform/thumbnail?provider=spo&farmid=194056&inputFormat=jpeg&cs=fFNQTw&docid=https%3A%2F%2Fmy.microsoftpersonalcontent.com%2F_api%2Fv2.0%2Fdrives%2Fb!gqtMT79quEyMW33Y6ezekc6-xBUzGexDjcR9HzbUF_lJ1BL09Z-1SZgT2b5WgK3R%2Fitems%2F01KZUYRQR4UK6SIEKCYNAYNSJSMYDYXGLV%3Ftempauth%3Dv1e.eyJzaXRlaWQiOiI0ZjRjYWI4Mi02YWJmLTRjYjgtOGM1Yi03ZGQ4ZTllY2RlOTEiLCJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvbXkubWljcm9zb2Z0cGVyc29uYWxjb250ZW50LmNvbUA5MTg4MDQwZC02YzY3LTRjNWItYjExMi0zNmEzMDRiNjZkYWQiLCJleHAiOiIxNzUzODc2ODAwIn0.BHCO2Vyl5ejIXiRf-MwHNfl2Hmf8PaqeGRyC0bvZ0xZ5med9O7LWwtRVHjplEK0-npmK1WNUipMJY_lHONGxyELFnxsOMY4ZzG_FwJ2Ngf56PvCkHDbdSAXdqFmZDkQ0EkJI6_d66CeTT1r9qo71I8_mkb5IIYc9mmDtik2v70TmOdvcAQTqVRPKN2xxLKkrxBtDn3xbPrVxLZ9_61hs6_lup0qYTLmaCRJCNrVxkd2ep5-E8hygQ9LkPMeedFnPbUQjMmD0ZT95He9F8hVznYkFeZjlYd--h1y1u3B9w00cHF0Liso6NRCG0tYoXvGjB-kX9byYS0nPJvAAaGAzWIBg26rLCqirT0pttd8fD18fnyge6Yo_MYaMh0wGT5ou2dFhgJWL67DFcCxH4yNYfDVNckeqUppdBi-0_zHMOgL3QE0wsvWmiwgDlVpnsRMegIEr9P7pEmqGoZS9Z3AJQhZ4bzBO1jQfc2XXvH3o9v4.G_YOHkNlT521CWPFz4i48R-I5_OexrLGg4NKrgbwyv8%26version%3DPublished&cb=63889391043&encodeFailures=1&width=298&height=169", // scenic top view ocean-side golf
+    "https://centralus1-mediap.svc.ms/transform/thumbnail?provider=spo&farmid=194056&inputFormat=jpeg&cs=fFNQTw&docid=https%3A%2F%2Fmy.microsoftpersonalcontent.com%2F_api%2Fv2.0%2Fdrives%2Fb!gqtMT79quEyMW33Y6ezekc6-xBUzGexDjcR9HzbUF_lJ1BL09Z-1SZgT2b5WgK3R%2Fitems%2F01KZUYRQTNEWH3W3I3QZG32PMU4GRLUKA6%3Ftempauth%3Dv1e.eyJzaXRlaWQiOiI0ZjRjYWI4Mi02YWJmLTRjYjgtOGM1Yi03ZGQ4ZTllY2RlOTEiLCJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvbXkubWljcm9zb2Z0cGVyc29uYWxjb250ZW50LmNvbUA5MTg4MDQwZC02YzY3LTRjNWItYjExMi0zNmEzMDRiNjZkYWQiLCJleHAiOiIxNzUzODc2ODAwIn0.rUVx9gjCVo9mXXlRqLOgCQV9yVeal0bbaqQj1mbRWWZJpXMwnnQWARe0Z5s04JeIaoRGPM7Y3RJi78e3AltkbcC7KnGaY2E4l5xaIld6JquaT6UVuf817FgJdbnUs-rdemfRZ3bLDQtuYMnrDsm0YAdRk-gSUBMlj_feZ4gCnfVUmRhqo_se0AchdiEHLPRcho_CVeae3kVlQPwbIOngPc9V0M2OAbUjzXTdyI425nqpt1uV3ei-jpxdUZylVcT7Eck7uZj2EaXjp4rpeC_xWuESdyR_JOrRionJuzaJbfeBpvGWMN7il4v14kKGSbQ4T9bch3IDpVJp1OW5znjxd4YrUhF8xJcWdKvMfKzXJ4aMelm3kXMsLWfx_QpE65OhpzUnyD8DV8moC9ZZPPuU2yB4RK3zub5yurpYcZgLvJLPfOTJQR7QRedDG_FzS7gJs-QtqooXUwpKCBTjZ-Gt01Az8_lXWs47TbEJb0KvCRI.0PnOrN-is3xpDz2oYnrZIPMtOWHYlvFiKCs03N3gQ0g%26version%3DPublished&cb=63889391044&encodeFailures=1&width=1458&height=838", // green valley golf course
+    "https://centralus1-mediap.svc.ms/transform/thumbnail?provider=spo&farmid=194056&inputFormat=webp&cs=fFNQTw&docid=https%3A%2F%2Fmy.microsoftpersonalcontent.com%2F_api%2Fv2.0%2Fdrives%2Fb!gqtMT79quEyMW33Y6ezekc6-xBUzGexDjcR9HzbUF_lJ1BL09Z-1SZgT2b5WgK3R%2Fitems%2F01KZUYRQSD5JQLF6QNY5B3PPV445CIKKXA%3Ftempauth%3Dv1e.eyJzaXRlaWQiOiI0ZjRjYWI4Mi02YWJmLTRjYjgtOGM1Yi03ZGQ4ZTllY2RlOTEiLCJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvbXkubWljcm9zb2Z0cGVyc29uYWxjb250ZW50LmNvbUA5MTg4MDQwZC02YzY3LTRjNWItYjExMi0zNmEzMDRiNjZkYWQiLCJleHAiOiIxNzUzODc2ODAwIn0.gXMj7Kb-uwOpPUPlvTyjwG21bJPsJVXCMa30PsVAFCS4Ba-HkcY1U0BykndQGrU8Sm8DVm6NgNPf6U2gvteZHwEv6My0LbwABhh710sKS6nOuX9GD4o4K1fdbu9nJ7Z4sEyMOXOAiN-3KaHbPRBFCE2q68TS0z1034oWSSJK9q_kuw_o7mIFDp4L3D0tHs-wQfNYqWqnfWBB_u0yPd8sHuNn3emdiEUCvOhsCx9crlnZq4Jrj1IdVlhlCmc_ZTo66FkUWOcFVwggURijeYZNXcSso_aWaabjSPmDBS1AbTVr1z-FcSVi7cSFPb8rOS-62J4OutwUlObjiZr2OF-XnTV__Cr2J3sfXGMke_0pzzZ_I8BUukiwFqullYY7kv4VyzVAj6SdsFr75MejWCtVpxryl4v5ba4DNIDLiVXc43cHlUjDtyhsF8q-pJJsRkyfEA3OrLNEn-v2A-pEundQUQDNK6VwQuiPwFiq3-bVr9g.ttgZmTu6WAJwGne0QdGqg1R2hyTiR1ziUwjMdAeac1Q%26version%3DPublished&cb=63889391044&encodeFailures=1&width=1140&height=520", // golden hour fairway
+    "https://centralus1-mediap.svc.ms/transform/thumbnail?provider=spo&farmid=194056&inputFormat=jpeg&cs=fFNQTw&docid=https%3A%2F%2Fmy.microsoftpersonalcontent.com%2F_api%2Fv2.0%2Fdrives%2Fb!gqtMT79quEyMW33Y6ezekc6-xBUzGexDjcR9HzbUF_lJ1BL09Z-1SZgT2b5WgK3R%2Fitems%2F01KZUYRQW4PIVP2MENVNC3OUJKCBFTKQZK%3Ftempauth%3Dv1e.eyJzaXRlaWQiOiI0ZjRjYWI4Mi02YWJmLTRjYjgtOGM1Yi03ZGQ4ZTllY2RlOTEiLCJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvbXkubWljcm9zb2Z0cGVyc29uYWxjb250ZW50LmNvbUA5MTg4MDQwZC02YzY3LTRjNWItYjExMi0zNmEzMDRiNjZkYWQiLCJleHAiOiIxNzUzODc2ODAwIn0.1OeGoSioGfPITxRTEVaYeBZqH1AhM1to__CETWkO3FMLdj5BoUlaelojjs5qsdvXYPpey02T1CPMmdhKeIIdZ3gc5wOzrvewwrdFdTbEn3jRBV5ZCoClGcvvgCEivsilXdxZkh3XetHQyvErJRDq6tqFoxFowHeAUERlsxeZp9ivZy82LsuPNtO9fCThf5WkTYtvxIAtXIGF6tRMO6cYX5pk7TPvLU9oYa5UWAgjJskq1dpDu100U8mi4yvRdIDThGmYtBqa8ZLNYT3ORPjTD-rXmUjJDU29d9lSo_LOYg6g68rUaZmdapOUmnk1TiI2F5cCW-Ns2h6-0ZHSpnbHLzaA2nAS_Cm44kp8K7hsG3uT4yJovtlEuZDq_4pWecH8drCKgs-FfU6dF2uiPbTBkqK6Jiu75W2-SPbWzylO_8gIWNRznxYfMmfBiGLVATyTSTiNhApCK6VR606rMHZqbp9PHvZjKWvHooOF-eUuPcE.PEnAVpzpDQjqlTsRWWC4jSh8aWCscqLKNyxPicNAA1U%26version%3DPublished&cb=63889391146&encodeFailures=1&width=277&height=182", // desert golf field
+    "https://centralus1-mediap.svc.ms/transform/thumbnail?provider=spo&farmid=194056&inputFormat=jpeg&cs=fFNQTw&docid=https%3A%2F%2Fmy.microsoftpersonalcontent.com%2F_api%2Fv2.0%2Fdrives%2Fb!gqtMT79quEyMW33Y6ezekc6-xBUzGexDjcR9HzbUF_lJ1BL09Z-1SZgT2b5WgK3R%2Fitems%2F01KZUYRQUHDRSFGZN2QNGYQ6PQMBGCGRHH%3Ftempauth%3Dv1e.eyJzaXRlaWQiOiI0ZjRjYWI4Mi02YWJmLTRjYjgtOGM1Yi03ZGQ4ZTllY2RlOTEiLCJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvbXkubWljcm9zb2Z0cGVyc29uYWxjb250ZW50LmNvbUA5MTg4MDQwZC02YzY3LTRjNWItYjExMi0zNmEzMDRiNjZkYWQiLCJleHAiOiIxNzUzODc2ODAwIn0.4DvLPSnfxOGEu3sqk-dJRiWlDVsVixyzAelsKhaznD89ymEZT3NM5X1Ffe_BmeCuWE9QKB1eRqctS9ch6MyCBhNYTMnbEcUrS2C9F5E98mVCZqXyi92QU9BhR89dZKtFA0xtmPxQ9cn5c3C3gSGTxW1JencLfIttXGzku-Oj1924dw6JV0QosuvCAVqAuIROCz4RdPU9tXrN2j0Ck_n6gp0zXmhm-uLN2Xkh3IIiqHQ8vWq35eOOolFmQIAD0jsgHnlmHG-l-DCjdk7YlGWcW_xF_DOB4y9y7v34qPxhYBVugCLLxk3f3LNrSklflNTK5ChVxiS2pXXc0rZmJWXHgfSZY6WcZ5cKuEW3H5CPHifEZpoWaC8RzVQ3NoiXd7ONqoh6C7e_dkGxgoUu0DLBakUbbei8LUKymSL_uDrbJ3yqWE5FRr9_g4PsphH-_eWkgrHUoP8oOGhXA5LmWwJ_MDsqLIWHJs7KAD8hn7QKISk.vK40Lvco0IRlIAWORrgSJWsSw4t9QtRxM28m-xPb698%26version%3DPublished&cb=63889391146&encodeFailures=1&width=256&height=197", // misty mountains golf course
+    "https://centralus1-mediap.svc.ms/transform/thumbnail?provider=spo&farmid=194056&inputFormat=webp&cs=fFNQTw&docid=https%3A%2F%2Fmy.microsoftpersonalcontent.com%2F_api%2Fv2.0%2Fdrives%2Fb!gqtMT79quEyMW33Y6ezekc6-xBUzGexDjcR9HzbUF_lJ1BL09Z-1SZgT2b5WgK3R%2Fitems%2F01KZUYRQVINHKT6L7PT5GIWS5P776WUHH4%3Ftempauth%3Dv1e.eyJzaXRlaWQiOiI0ZjRjYWI4Mi02YWJmLTRjYjgtOGM1Yi03ZGQ4ZTllY2RlOTEiLCJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvbXkubWljcm9zb2Z0cGVyc29uYWxjb250ZW50LmNvbUA5MTg4MDQwZC02YzY3LTRjNWItYjExMi0zNmEzMDRiNjZkYWQiLCJleHAiOiIxNzUzODc2ODAwIn0.PiYRGvwT9AC_RYi4CKlkK3gt0O2Fa1HKlxa5tKo02_pNbpi5Z0HipGXNt2hwoIZs1xQbw6e9AnZY0zaiMkDJ58rXAqlccxKjzwfByRHWmCG4MTTdhnUgka09Hp3pl682rdr5Mi6dPZ2xLdHF_RxCz59XR-8daXABUC_BAImug8jXiwh8ZHrn_wwZ68G4LwiPEAJi2BNZLASoGu74KW4dP6-dg-JPFKwiQ2gkoCiUEdKRyLx_Hf772YYEssv4GyapMUPqYKmyLZzWXd8xx5bxY8Mn4pD63EaFHZ0ejHBup61VfqS04S6hRA47slzQjcCZwaxTVxxnJty3Wu2TpdWlUk1OKIiTUXx5sVTWYGuXh8ofPbwUGMpwK21Y-SRYcYOuZ-N-iKJ2Hjgm7qGnZixTIL8k8jy39Gy6kW4K2NL0mBoBq7D6rM7-9tDOzEwwwOME0Fo7b9fIDjOltb-inRtg5vRsW2LmETusakjOE75Mf68.9vPZFJu6sw6kbucyW0VAN20tFP5qHIGK_tY1JA7aEhU%26version%3DPublished&cb=63889391042&encodeFailures=1&width=1200&height=502", // putting green closeup
+    // "https://centralus1-mediap.svc.ms/transform/thumbnail?provider=spo&farmid=194056&inputFormat=webp&cs=fFNQTw&docid=https%3A%2F%2Fmy.microsoftpersonalcontent.com%2F_api%2Fv2.0%2Fdrives%2Fb!gqtMT79quEyMW33Y6ezekc6-xBUzGexDjcR9HzbUF_lJ1BL09Z-1SZgT2b5WgK3R%2Fitems%2F01KZUYRQT7PE2LEWEJJJG2XI4WQAKNZIV6%3Ftempauth%3Dv1e.eyJzaXRlaWQiOiI0ZjRjYWI4Mi02YWJmLTRjYjgtOGM1Yi03ZGQ4ZTllY2RlOTEiLCJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvbXkubWljcm9zb2Z0cGVyc29uYWxjb250ZW50LmNvbUA5MTg4MDQwZC02YzY3LTRjNWItYjExMi0zNmEzMDRiNjZkYWQiLCJleHAiOiIxNzUzODc2ODAwIn0.oM0TKWXKtg-wPpuHH_HNp67L3WeuMaFJRuDXVYLQERQgjM9QH5mOEM4rPlz_vbNnUagHXuRpuOgJw4DtB9gqQbPNPQk8pu2_v7NJPviN81cqMDtKzWVea8Q4-AzGH5DGaYb_WhkxtnGNX9u-zyQgZp43V7F3_lHok02XEdxatNMoJCVBn-ZEjRIE4oyc7l53yRjyzmCohoV6R_eVvCkfakeBhebtNnYOFVEpWNuB9t_tc4s7KCJNOQV1uKPsGtXmmOmKwVORNhDj15oy5WI6er8bCJ8GwWgx3cTlyjppAvVmc6zvBKRwOoDFaQ7adc60sHukidZEqGwtMWT2hESgcE9JiSok5kcBTAgghOEgTdFVpIww-d557fsQCx416rUxw8e2tjh8VWQ1X9D6UlqLc1P3cUGbrRqI47CDVakz3f49fB3THPLuQVSq9dfYRnpit9WxL_sjoyY--Oa0Up6eijTKpw9AC9kL3DSKFCW5cZw.a3705bMEO41BwnqZWzRzJ33eX1-KIVwVHGFgZ4iMyec%26version%3DPublished&cb=63889391042&encodeFailures=1&width=966&height=544"  // aerial view of golf course
+  ];
 
   return (
-    <div className="w-full min-h-screen px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 bg-gradient-to-br from-slate-50 via-gray-50 to-stone-50">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-emerald-800 via-green-700 to-teal-600 bg-clip-text text-transparent mb-4">
-            Gallery
-          </h2>
-          <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto px-4">
-            Beauty and elegance of our partner courses
-          </p>
-        </div>
-
-        {/* Mobile Layout: Single column */}
-        <div className="lg:hidden space-y-4 sm:space-y-6">
-          {images.map((src, index) => (
-            <div
-              key={index}
-              className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 h-64 sm:h-72"
-            >
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
-
-              <img
-                src={src}
-                alt={`Golf Course ${index + 1}`}
-                className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
-              />
-
-              <div className="absolute top-3 right-3 z-20">
-                <div className="w-8 h-8 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white/30">
-                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Desktop Layout: Complex grid */}
-        <div className="hidden lg:grid grid-cols-6 grid-rows-4 gap-6 h-[1500px] w-full max-w-6xl mx-auto">
-          {images.map((src, index) => (
-            <div
-              key={index}
-              className={`${getGridClasses(index)} group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500`}
-            >
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
-
-              <img
-                src={src}
-                alt={`Golf Course ${index + 1}`}
-                className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
-              />
-
-              <div className="absolute top-3 right-3 z-20">
-                <div className="w-8 h-8 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white/30">
-                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+    <div className="px-4 py-10">
+      <h2 className="text-3xl font-bold mb-8 text-center text-green-800">Golf Course Gallery</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-7xl mx-auto">
+        {images.map((src, index) => (
+          <div key={index} className="h-[220px] w-full overflow-hidden rounded-xl shadow-lg">
+            <img
+              src={`${src}?auto=format&fit=crop&w=800&q=80`}
+              alt={`Golf Course ${index + 1}`}
+              className="h-full w-full object-cover object-center transition-transform duration-300 hover:scale-105"
+            />
+          </div>
+        ))}
       </div>
     </div>
   );
-}
+};
+
+export default GolfCourseGallery;
