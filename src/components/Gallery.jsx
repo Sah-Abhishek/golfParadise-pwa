@@ -1,4 +1,9 @@
 import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 const GolfCourseGallery = () => {
   const images = [
@@ -16,17 +21,36 @@ const GolfCourseGallery = () => {
 
   return (
     <div className="px-4 py-10">
-      <h2 className="text-3xl font-bold mb-8 text-center text-green-800">Golf Course Gallery</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-7xl mx-auto">
-        {images.map((src, index) => (
-          <div key={index} className="h-[220px] w-full overflow-hidden rounded-xl shadow-lg">
-            <img
-              src={`${src}?auto=format&fit=crop&w=800&q=80`}
-              alt={`Golf Course ${index + 1}`}
-              className="h-full w-full object-cover object-center transition-transform duration-300 hover:scale-105"
-            />
-          </div>
-        ))}
+      <h2 className="text-3xl font-bold mb-8 text-center text-green-800">
+        Golf Course Gallery
+      </h2>
+      <div className="max-w-6xl mx-auto">
+        <Swiper
+          modules={[Navigation, Pagination, Autoplay]}
+          spaceBetween={20}
+          slidesPerView={1}
+          breakpoints={{
+            640: { slidesPerView: 1 },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
+          navigation
+          pagination={{ clickable: true }}
+          autoplay={{ delay: 3000 }}
+          loop
+        >
+          {images.map((src, index) => (
+            <SwiperSlide key={index}>
+              <div className="h-[220px] w-full overflow-hidden rounded-xl shadow-lg">
+                <img
+                  src={`${src}?auto=format&fit=crop&w=800&q=80`}
+                  alt={`Golf Course ${index + 1}`}
+                  className="h-full w-full object-cover object-center transition-transform duration-300 hover:scale-105"
+                />
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </div>
   );
